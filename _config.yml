@@ -5,13 +5,14 @@ meta_description: "A blog where I share my little knowledge and tricks about pro
 aboutPage: true
 
 paginate: 10
+url: migration.ixartz.com
 baseurl: /
 
 google_analytics: 'UA-XXXXXXXX-X'
 disqus: false
 disqus_shortname: 'your-disqus-shortname'
 
-author:         'Ixartz (Remi Weng)'
+author:         'Ixartz'
 authorTwitter:  'ixartz'
 
 permalink:      /:title/
