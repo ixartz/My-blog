@@ -1,6 +1,6 @@
-name: Your New Jekyll Site
-description: Blogging about stuffs
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
+name: Ixartz's technical blog
+description: Passionate about Computer Science
+meta_description: "A blog where I share my little knowledge and tricks about programming"
 
 aboutPage: true
 
@@ -11,8 +11,8 @@ google_analytics: 'UA-XXXXXXXX-X'
 disqus: false
 disqus_shortname: 'your-disqus-shortname'
 
-author:         'Your Name'
-authorTwitter:  'YourTwitterUsername'
+author:         'Ixartz (Remi Weng)'
+authorTwitter:  'ixartz'
 
 permalink:      /:title/
 
