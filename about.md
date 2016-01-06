@@ -4,6 +4,6 @@ permalink: about/
 profile: true
 ---
 
-A blog where I share my little knowledge and tricks about programming...
+A blog where I share my knowledge and tricks about programming...
 
 {% include footer.html %}
