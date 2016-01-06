@@ -12,7 +12,7 @@ google_analytics: 'UA-XXXXXXXX-X'
 disqus: false
 disqus_shortname: 'your-disqus-shortname'
 
-author:         'Ixartz'
+author:         'ixartz'
 authorTwitter:  'ixartz'
 
 permalink:      /:title/
@@ -37,4 +37,4 @@ defaults:
         values:
             layout: post
 
-gem: ['jekyll-paginate']
+gems: [jekyll-paginate]
