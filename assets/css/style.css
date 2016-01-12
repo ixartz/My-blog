@@ -145,7 +145,7 @@ nav.main-nav a.cta {
 }
 
 #wrapper.home {
-	max-width: 600px;
+	max-width: 768px;
 	margin: 0 auto;
 	padding: 0px 40px 20px 40px;
 }
@@ -165,7 +165,6 @@ a,
 #post-list li:hover .dates,
 #title:hover {
 	text-decoration: none;
-	color: #5badf0;
 	color: #5694f1;
 }
 
@@ -186,7 +185,7 @@ ul 	{ margin:0; padding:0; }
 li	{ list-style-type:circle; list-style-position:inside; }
 
 /* Line Height */
-#post-body, p { line-height:1.7; }
+#post-body, p { line-height:1.7; text-align: justify; }
 
 b, strong { font-weight: 500;
   color: #1E2025; }
@@ -233,7 +232,8 @@ em, i { font-style: italic; }
 }
 
 .post h2 {
-	margin-bottom: 40px;
+	margin-top: 16px;
+	margin-bottom: 16px;
 	  font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
 	  color: #111;
 }
@@ -260,9 +260,9 @@ em, i { font-style: italic; }
 
 h3, h4, h5 { color:#333; }
 
-h3 { font-size:20px; font-weight: 400; }
-h4 { font-size:16px; font-weight:bold; }
-h5 { font-size:15px; font-weight: bold; }
+h3 { margin-left: 30px; font-size:20px; }
+h4 { font-size:16px; }
+h5 { font-size:15px; }
 
 h6 {
 	font-size: 13px;
@@ -353,9 +353,20 @@ thead th,th {
 }
 
 img {
-	width: 100%;
-	max-width: 100%;
+	margin-top: 8px;
 	border-radius: 3px;
+}
+
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1em;
+}
+
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1em;
 }
 
 /* Made with Cactus Badge */
