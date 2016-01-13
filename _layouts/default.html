@@ -18,7 +18,7 @@
       {% include profile.html %}
   {% endif %}
 
-  <section id="wrapper" class="{% if page.profile %}home{% endif %}">
+  <section id="wrapper" class="{% if page.profile == "index" %}home{% elsif page.profile == "about" %}about{% endif %}">
     {{ content }}
   </section>
 

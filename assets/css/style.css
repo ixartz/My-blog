@@ -150,6 +150,12 @@ nav.main-nav a.cta {
 	padding: 0px 40px 20px 40px;
 }
 
+#wrapper.about {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 0px 40px 20px 40px;
+}
+
 .home #avatar {
 	float: right;
 	width: 40px;
