@@ -16,7 +16,7 @@ tags:
 
 After installing TBB library and its dependencies with the following command:
 
-{% highlight shell %}
+{% highlight sh %}
 sudo port install tbb
 {% endhighlight %}
 
@@ -39,7 +39,7 @@ int main()
 }
 {% endhighlight %}
 
-{% highlight shell %}
+{% highlight sh %}
 g++ -W -Wall -Wextra -Werror -pedantic -std=c++11 main.cc
 {% endhighlight %}
 
@@ -60,11 +60,11 @@ int main()
 }
 {% endhighlight %}
 
-{% highlight shell %}
+{% highlight sh %}
 g++ -W -Wall -Wextra -Werror -pedantic -std=c++11 -ltbb main.cc
 {% endhighlight %}
 
-{% highlight shell %}
+{% highlight sh %}
 Undefined symbols for architecture x86_64:
   "tbb::task_scheduler_init::initialize(int, unsigned long)", referenced from:
       tbb::task_scheduler_init::task_scheduler_init(int, unsigned long) in test.o
@@ -80,7 +80,7 @@ This flag allows to load the library files (not only headers). So, if we can not
 
 In order to fix this error, type the following command:
 
-{% highlight shell %}
+{% highlight sh %}
 source /opt/local/bin/tbbvars.sh
 {% endhighlight %}
 
