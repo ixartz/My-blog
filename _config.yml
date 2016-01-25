@@ -9,8 +9,8 @@ url: migration.ixartz.com
 baseurl: /
 
 google_analytics: 'UA-38565900-1'
-disqus: false
-disqus_shortname: 'your-disqus-shortname'
+disqus: true
+disqus_shortname: 'ixartz'
 
 author:         'ixartz'
 authorTwitter:  'ixartz'
