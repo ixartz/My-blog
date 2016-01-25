@@ -188,7 +188,10 @@ a,
 }
 
 ul 	{ margin:0; padding:0; }
-li	{ list-style-type:circle; list-style-position:inside; }
+ul li	{ list-style-type:circle; list-style-position:inside; }
+
+ol 	{ margin:0; padding:0; }
+ol li	{ list-style-position:inside; padding-left: 20px; }
 
 /* Line Height */
 #post-body, p { line-height:1.7; text-align: justify; }
@@ -285,6 +288,12 @@ p.small {
 	display: block;
 }
 
+p.caption {
+	font-size: 12px;
+	text-align: center;
+	font-style: italic;
+}
+
 blockquote {
 	padding-left: 15px;
 	border-left: 3px solid #eee;
@@ -378,6 +387,13 @@ img.alignleft {
 	display: inline;
 	float: left;
 	margin-right: 1em;
+}
+
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Made with Cactus Badge */
