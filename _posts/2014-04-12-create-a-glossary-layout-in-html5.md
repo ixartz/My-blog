@@ -90,7 +90,7 @@ You can visualise <a href="http://jsfiddle.net/ixartz/Bx8nV/4/" target="_blank">
 
 ## Adding a little cosmetics
 
-We will add a vertical separator thanks to *column-rule*:
+We will add a vertical separator by applying *column-rule*:
 
 {% highlight css %}
 div.lexique
@@ -104,6 +104,38 @@ div.lexique
 }
 {% endhighlight %}
 
-And, we will also add some color on letters and definitions, delete list-style-type, etc. So, you can find the whole result <a href="http://jsfiddle.net/ixartz/L7Fzv/2/" target="_blank">at this link</a>:
+## Responsive design
+
+Thanks to @Daniel comment, we can also improve the glossary by using CSS3 media queries:
+{% highlight css %}
+@media screen and (max-width: 768px) {
+  div.lexique
+  {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -o-column-count: 2;
+    -ms-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div.lexique
+  {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    -o-column-count: 1;
+    -ms-column-count: 1;
+    column-count: 1;
+    -webkit-column-rule: none;
+    -moz-column-rule: none;
+    -o-column-rule: none;
+    -ms-column-rule: none;
+    column-rule: none;
+  }
+}
+{% endhighlight %}
+
+And, we will also add some color on letters and definitions, delete list-style-type, etc. So, you can find the whole result <a href="http://jsfiddle.net/ixartz/L7Fzv/" target="_blank">at this link</a>:
 
 ![The final result]({{ site.baseurl }}assets/images/posts/result-html.png)
