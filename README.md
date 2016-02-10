@@ -1,4 +1,8 @@
-## Copyright & License
+# Ixartz's technical blog
+
+Passion for Computer Science - A blog where I share my knowledge and tricks about programming…
+
+## Copyright & License for Jekyll themes
 
 Copyright (c) 2015 [Cactus Authors](https://github.com/koenbok/Cactus/blob/master/AUTHORS) -  Released under the MIT License.
 
