@@ -5,7 +5,7 @@ meta_description: "A blog where I share my passion about programming"
 aboutPage: true
 
 paginate: 10
-url: migration.ixartz.com
+url: blog.ixartz.com
 baseurl: /
 
 google_analytics: 'UA-38565900-1'
