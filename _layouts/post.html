@@ -26,7 +26,7 @@ layout: default
 </footer>
 
 <!-- Disqus comments -->
-{% if site.disqus %}
+{% if jekyll.environment == "production" and site.disqus %}
     <div class="archive readmore">
         <h3>Comments</h3>
         {% include disqus.html %}
