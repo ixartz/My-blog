@@ -1,6 +1,6 @@
 ---
 title: 'My long journey to find a job as a fresh graduate student in computer science (Part 1 of 3)'
-date: 2016-06-23 10:27:58
+date: 2016-07-04 21:50:58
 categories:
   - My life
 tags:
