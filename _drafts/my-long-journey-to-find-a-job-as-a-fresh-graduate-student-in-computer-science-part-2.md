@@ -10,7 +10,7 @@ tags:
 ---
 ## Part 2: Prepare for interviews
 
-All the experience you learn by starting a side project is really good for your resume. But, unfortunately, it is not enough to get you a job. Indeed, interviews for software engineers, mainly focus on algorithms. You do not really work on this during your personal projects.
+![Going deeper into algorithms]({{ site.baseurl }}assets/images/posts/algorithms.jpg){: .alignright}All the experience you learn by starting a side project is really good for your resume. But, unfortunately, it is not enough to get you a job. Indeed, interviews for software engineers, mainly focus on algorithms. You do not really work on this during your personal projects.
 
 Even as a Computer Science student, you had a course about algorithms. If you are like me, you have forgotten a lot of basic knowledge. For the majority of the people, we need a huge preparation.
 
@@ -22,15 +22,32 @@ If you target the best companies in the world, you will need to work on algorith
 
 The preparation journey will be a long one. I highly suggest finding someone who will do it with you. You can support each other during hard moment and keep continuing to work hard.
 
+#### Massive open online courses
+
 First, you will need to review your algorithm courses. Or, you can find a really nice course on Internet:
+
+* <a href="https://www.coursera.org/learn/introduction-to-algorithms" target="_blank">Algorithms</a> and <a href="https://www.coursera.org/learn/java-data-structures-algorithms-2" target="_blank">Part II</a> by Princeton University
+* <a href="https://www.coursera.org/learn/algorithm-design-analysis" target="_blank">Algorithms: Design and Analysis</a> and <a href="https://www.coursera.org/learn/algorithm-design-analysis-2" target="_blank">Part 2</a> by Stanford University
+
+#### Books
 
 You can also find books that will help you to understand deeply about algorithms. Here, this is the list of books:
 
+* <a href="https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850" target="_blank">Cracking the Coding Interview</a>
+* <a href="https://www.amazon.com/Programming-Interviews-Exposed-Secrets-Landing/dp/1118261364/" target="_blank">Programming Interviews Exposed</a>
+
 Courses and books are a good start. Unfortunately, the best way to master a skill is to practice. The book *Cracking the coding interview* is the reference to prepare technical interview for software engineers. This book is really nice to read, but it will become a more powerful tool if you solve the questions by yourself.
 
-There is also a bunch of website that help you to prepare interview:
+#### Websites
+
+There are also several websites that help you to prepare interviews:
+
+* <a href="https://leetcode.com/" target="_blank">Leetcode</a>
+* <a href="https://www.hackerrank.com/" target="_blank">HackerRank</a>
 
 All the links I give you here contains a lot of questions from real interviews. These websites implement a text editor, letting you program directly on your browser. At the end, you can run your code and you can check if the output is equal to the expected results. You do not need to write yourself the unit test because it is already provided.
+
+#### Advice
 
 I also suggest you to stick into one programming language and do not change during your training. Otherwise, you will lose your time to learn another one.
 
@@ -38,7 +55,7 @@ Even if it is not a big deal to learn a new language, you should only focus on a
 
 ### Write your resume
 
-The resume is a complex topic and my knowledge is limited about this. Even if I am currently based in France, I was using the American format. For example, my resume was in English in order to differentiate myself from other applicants. I will share with you a couple of tips for an American resume:
+![Resume, your background and skills]({{ site.baseurl }}assets/images/posts/resume.jpg){: .alignright}The resume is a complex topic and my knowledge is limited about this. Even if I am currently based in France, I was using the American format. For example, my resume was in English in order to differentiate myself from other applicants. I will share with you a couple of tips for an American resume:
 
 * Your resume should fit into one page
 * You should describe your professional experiences and your personal projects. You should not forget to mention the impact you have made
@@ -52,7 +69,7 @@ For sure, the best solution to find a job is through the network. An employee in
 
 As a new graduate, your network should be small. If you are lucky, you will have some friends or relatives that already in the industry. But, most of the people you know are looking for a job at the same time as you ;) That means you cannot really use your network to find a job.
 
-However, you should still keep in touch with your classmates and build a strong relationship with them. They probably stay in the technology industry and in a couple of years, they will help you in your future job searching. So, after finding your job and starting working, it costs nothing to contact your old classmates and take a coffee or a dinner with them.
+![Invest in your network]({{ site.baseurl }}assets/images/posts/networking.jpg){: .alignright}However, you should still keep in touch with your classmates and build a strong relationship with them. They probably stay in the technology industry and in a couple of years, they will help you in your future job searching. So, after finding your job and starting working, it costs nothing to contact your old classmates and take a coffee or a dinner with them.
 
 ### Conclusion
 
