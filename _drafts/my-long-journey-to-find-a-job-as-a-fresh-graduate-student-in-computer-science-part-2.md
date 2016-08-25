@@ -1,6 +1,6 @@
 ---
 title: 'My long journey to find a job as a fresh graduate student in computer science (Part 2 of 3)'
-date: 2016-08-22 18:27:58
+date: 2016-08-25 18:27:58
 categories:
   - My life
 tags:
@@ -48,6 +48,10 @@ There are also several websites that help you to prepare interviews:
 All the links I give you here contains a lot of questions from real interviews. These websites implement a text editor, letting you program directly on your browser. At the end, you can run your code and you can check if the output is equal to the expected results. You do not need to write yourself the unit test because it is already provided.
 
 #### Advice
+
+Sometimes, you will not succeed to solve some interview questions. You can find solutions on Internet. Especially, you have a lot of videos on YouTube that explain them. And, it is easier to understand an algorithm on YouTube than on a blog with only text.
+
+You should also do several times the same question you failed to be sure you understand well and do not forget to track your mistakes.
 
 I also suggest you to stick into one programming language and do not change during your training. Otherwise, you will lose your time to learn another one.
 
