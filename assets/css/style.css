@@ -562,22 +562,6 @@ Post List
 	padding: 1px;
 }
 
-#post-nav span.prev:hover .arrow {
-	left: -4px;
-}
-
-#post-nav span.next:hover .arrow {
-	right: -4px;
-}
-
-#post-nav span.prev:hover {
-	left: -3px;
-}
-
-#post-nav span.next:hover {
-	right: -3px;
-}
-
 /* Archive */
 h1.archive {
 	margin-bottom: 0px;
