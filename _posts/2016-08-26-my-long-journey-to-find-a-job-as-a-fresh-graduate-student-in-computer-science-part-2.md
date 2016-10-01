@@ -1,6 +1,7 @@
 ---
 title: 'My long journey to find a job as a fresh graduate student in computer science (Part 2 of 3)'
 date: 2016-08-26 14:27:58
+description: Preparation for interviews in tech companies
 categories:
   - My life
 tags:
@@ -10,7 +11,7 @@ tags:
 ---
 ## Part 2: Prepare for interviews
 
-![Going deeper into algorithms]({{ site.baseurl }}assets/images/posts/algorithms.jpg){: .alignright}All the experience you learn by starting a side project is really good for your resume. But, unfortunately, it is not enough to get you a job. Indeed, interviews for software engineers, mainly focus on algorithms. You do not really work on this during your personal projects.
+![Going deeper into algorithms]({{ site.baseurl }}assets/images/posts/algorithms.jpg){: .alignright}All the experience you can learn by starting a side project is really good for your resume. I explain it in the <a href="{{ site.baseurl }}my-long-journey-to-find-a-job-as-a-fresh-graduate-student-in-computer-science-part-1" target="_blank">first part</a> of this long post on how to get a job as a junior software engineer. But, unfortunately, it is not enough to get you a job. Indeed, interviews for software engineers, mainly focus on algorithms. You do not really work on this during your personal projects.
 
 Even as a Computer Science student, you had a course about algorithms. If you are like me, you have forgotten a lot of basic knowledge. For the majority of the people, we need a huge preparation.
 
