@@ -1,6 +1,7 @@
 ---
 title: 'My long journey to find a job as a fresh graduate student in computer science (Part 1 of 3)'
 date: 2016-07-04 18:50:58
+description: The experience you can learn by doing a side project
 categories:
   - My life
 tags:
@@ -58,3 +59,5 @@ You should also write a technical blog, there is a really nice article that expl
 ### Conclusion
 
 This advice should put the odds in your favor for your job hunting. It should reduce your pain during your search. If you think I miss some important part, do not hesitate to leave a comment below.
+
+The <a href="{{ site.baseurl }}my-long-journey-to-find-a-job-as-a-fresh-graduate-student-in-computer-science-part-2" target="_blank">second part</a> of this post will be about the preparation for interviews in tech companies.
