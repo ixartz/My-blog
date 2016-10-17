@@ -34,10 +34,16 @@ There is another option but it is not only for job seeking purpose. Indeed, read
 
 ### Phone screen
 
+Phone interview is the first real interaction you will have with a company. Often, you will start with a non-technical interview. You will mostly talk with recruiter about your skills, the company and the position you apply. This first step will help the recruiter to have a deeper understanding about you and your interests. For you, you will have a better idea about the role. Sometimes, he will challenge you with a technical question but he will not ask you to code something. For example, you can have a question like what is the polymorphism.
+
+After this first phone call and if the recruiter thinks your interest and your skills fit the company requirement, you will get another phone calls. Most of the time, it will be technical interviews and the recruiter will ask you to code. Usually, the first thing he will do is to describe himself and will ask you to do the same. Follow up, he will ask you one or several algorithm questions.
+
+Firstly, you will need to ask a lot of question in order to have a better idea about the requirements and the constraints.
+
 ### On-site interview
 
 ### The results: offer or rejection
 
 ### Conclusion
 
-Without any surprise, I start my career as software engineer. I am the first engineer at Intuit in Paris office and I will mainly focus on QuickBooks product. Since I have joined the company, I have learnt a lot: Java ecosystem, React, GraphQL, Docker, etc. It is totally true even after graduation, you will continue to learn. I am so happy to be part of Intuit and participate in its adventure to win French market.
+Without any surprise, I start my career as a software engineer. I am the first engineer at Intuit in Paris office and I will mainly focus on QuickBooks product. Since I have joined the company, I have learnt a lot: Java ecosystem, React, GraphQL, Docker, etc. It is totally true even after graduation, you will continue to learn. I am so happy to be part of Intuit and participate in its adventure to win the French market.
