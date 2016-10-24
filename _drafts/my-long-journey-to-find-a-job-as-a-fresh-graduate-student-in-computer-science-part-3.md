@@ -32,15 +32,17 @@ During this job hunting, I have mostly used the last option. When a company is i
 
 There is another option but it is not only for job seeking purpose. Indeed, reading technology news is a good way to know which companies get funded or which companies will open an new research and development center. It means that these companies will need to hire people.
 
-### Phone screen
+### Human Ressources Interview
 
-Phone interview is the first real interaction you will have with a company. Often, you will start with a non-technical interview. You will mostly talk with recruiter about your skills, the company and the position you apply. This first step will help the recruiter to have a deeper understanding about you and your interests. For you, you will have a better idea about the role. Sometimes, he will challenge you with a technical question but he will not ask you to code something. For example, you can have a question like what is the polymorphism.
+Usually, your first interview with a company will be a HR (Human Ressources) interview on the phone. Often, you will start with non-technical interview. You will mostly talk with recruiter about your skills, the company and the position you apply.
+
+This first step will help the recruiter to have a deeper understanding about you and your interests. For you, you will have a better idea about the role. Sometimes, he will challenge you with a technical question but he will not ask you to code something. For example, you can have a question like what is the polymorphism.
+
+### Technical interview
 
 After this first phone call and if the recruiter thinks your interest and your skills fit the company requirement, you will get another phone calls. Most of the time, it will be technical interviews and the recruiter will ask you to code. Usually, the first thing he will do is to describe himself and will ask you to do the same. Follow up, he will ask you one or several algorithm questions.
 
-Firstly, you will need to ask a lot of question in order to have a better idea about the requirements and the constraints.
-
-### On-site interview
+Firstly, you will need to ask a lot of question in order to have a better idea about the requirements and the constraints. Follow up, you can start to think about a brute force solution. Then, you will need to improve your first solution in order to have an optimal solution in time and memory complexity.
 
 ### The results: offer or rejection
 
