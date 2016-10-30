@@ -46,6 +46,12 @@ Firstly, you will need to ask a lot of question in order to have a better idea a
 
 ### The results: offer or rejection
 
+Even if you are disappointted, handling a rejection is the easy part. Indeed, you have just needed to thank your recruiter for his time. Fortunately, after a period of time, tech companies do not hesitate to interview again a candidate and you will have other opportunity to reapply to companies that rejected you. So, it is really important for you to keep a good relationship with your recruiter.
+
+In the other side, if you get an offer, it is the beginning of another challenge. You need to take a lot of factors into consideration. The first thing in mind is the financial compensation: salary, annual bonus, stock options, etc. But, you should also think about your long term strategy. For example, the skills you will learn or how you can grow your career in this company. And, the last factor is the work environment, it is an very important element and you shoud not overlook this. Especially, do not forget you will spend time with your coworker as much as your family members or friends.
+
 ### Conclusion
+
+I hope this article splitted into three parts helps you to find your dream job. I choose to write this post because I took a lot of time to find mine. By sharing my journey, I want to help other people in this long and stressful process.
 
 Without any surprise, I start my career as a software engineer. I am the first engineer at Intuit in Paris office and I will mainly focus on QuickBooks product. Since I have joined the company, I have learnt a lot: Java ecosystem, React, GraphQL, Docker, etc. It is totally true even after graduation, you will continue to learn. I am so happy to be part of Intuit and participate in its adventure to win the French market.
