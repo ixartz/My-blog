@@ -30,11 +30,11 @@ During this job hunting, I have mostly used the last option. When a company is i
 
 *Or, you can directly type on Google '[company name] careers'. For exemple, 'Apple careers' and you should find a list of vacant position at Apple company.*
 
-There is another option but it is not only for job seeking purposes. Indeed, reading technology news is a good way to know which companies get funded or which companies will open a new research and development center. It means that these companies will need to hire people.
+![Hacker news]({{ site.baseurl }}assets/images/posts/hacker-news-logo.jpg){: .alignright}There is another option but it is not only for job seeking purposes. Indeed, reading technology news is a good way to know which companies get funded or which companies will open a new research and development center. It means that these companies will need to hire people.
 
 ### Human Resources Interview
 
-Usually, your first interview with a company will be an HR (Human Resources) interview. Often, you will start with non-technical questions. You will mostly talk with a recruiter about yourself, your skills, the company and the position you apply.
+![Human resources find talent]({{ site.baseurl }}assets/images/posts/human-resources.jpg){: .alignright}Usually, your first interview with a company will be an HR (Human Resources) interview. Often, you will start with non-technical questions. You will mostly talk with a recruiter about yourself, your skills, the company and the position you apply.
 
 This first step will help the recruiter to have a deeper understanding about you and your interests. For you, you will have a better idea about the role.
 
@@ -48,7 +48,7 @@ Most of the time, it will be technical interviews and the interviewer will ask y
 
 #### How to answer an algorithm question
 
-You will need to ask a lot of questions in order to have a better idea about the requirements and the constraints. These questions will help you to understand what the interviewer expects.
+![Cracking the coding interview book]({{ site.baseurl }}assets/images/posts/cracking-the-coding-interview.jpg){: .alignleft}You will need to ask a lot of questions in order to have a better idea about the requirements and the constraints. These questions will help you to understand what the interviewer expects.
 
 Follow up, you can start to think about a brute force solution and explain it to the interviewer. Then, you will need to improve your first solution in order to have an optimal solution in time and memory complexity.
 
@@ -56,13 +56,13 @@ Follow up, you can start to think about a brute force solution and explain it to
 
 #### Handling a rejection
 
-Even if you are disappointed, handling a rejection is the easy part. Indeed, you just need to thank your recruiter for his time.
+![Interview rejection]({{ site.baseurl }}assets/images/posts/rejected.jpg){: .alignright}Even if you are disappointed, handling a rejection is the easy part. Indeed, you just need to thank your recruiter for his time.
 
 Fortunately, after a period of time, tech companies do not hesitate to interview again a candidate. So, you will have other opportunities to reapply to companies that rejected you. So, it is really important for you to keep a good relationship with your recruiter.
 
 #### Handling an offer
 
-On the other side, if you get an offer, it is the beginning of another challenge. You need to take a lot of factors into consideration. The first thing in mind is the financial compensation: salary, annual bonus, stock options, etc.
+![Join the company]({{ site.baseurl }}assets/images/posts/join-our-team.jpg){: .alignleft}On the other side, if you get an offer, it is the beginning of another challenge. You need to take a lot of factors into consideration. The first thing in mind is the financial compensation: salary, annual bonus, stock options, etc.
 
 You should really think about your long term strategy. For example, the skills you will learn or how you can grow your career in this company.
 
@@ -74,6 +74,6 @@ I hope this article split into three parts helps you to find your dream job. I c
 
 #### My story
 
-Without any surprise, I start my career as a software engineer. I am the first engineer at Intuit in Paris office and I will mainly focus on QuickBooks product. I am so happy to be part of Intuit and participate in its adventure to win the French market. By the way, Intuit and QuickBooks are unknown in France.
+![Intuit quickbooks]({{ site.baseurl }}assets/images/posts/quickbooks-logo.png){: .alignright}Without any surprise, I start my career as a software engineer. I am the first engineer at Intuit in Paris office and I will mainly focus on QuickBooks product. I am so happy to be part of Intuit and participate in its adventure to win the French market. By the way, Intuit and QuickBooks are unknown in France.
 
 Since I have joined the company, I have learnt a lot: Java ecosystem, React, GraphQL, Docker, etc. It is totally true even after the graduation, you will continue to learn.
