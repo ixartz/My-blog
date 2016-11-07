@@ -56,7 +56,7 @@ Follow up, you can start to think about a brute force solution and explain it to
 
 #### Handling a rejection
 
-![Interview rejection]({{ site.baseurl }}assets/images/posts/rejected.jpg){: .alignright}Even if you are disappointed, handling a rejection is the easy part. Indeed, you just need to thank your recruiter for his time.
+![Interview rejection]({{ site.baseurl }}assets/images/posts/rejected.jpg){: .alignright}Even if you are disappointed, handling a rejection is the easy part. Indeed, you just need to thank your recruiter for his time. You should also see a rejection as a training. Next time, you can avoid making the same mistake.
 
 Fortunately, after a period of time, tech companies do not hesitate to interview again a candidate. So, you will have other opportunities to reapply to companies that rejected you. So, it is really important for you to keep a good relationship with your recruiter.
 
