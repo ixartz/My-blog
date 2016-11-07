@@ -1,6 +1,6 @@
 ---
 title: 'My long journey to find a job as a fresh graduate student in computer science (Part 3 of 3)'
-date: 2016-10-01 12:27:58
+date: 2016-11-07 14:34:18
 description: The process until you get an offer from a company
 categories:
   - My life
