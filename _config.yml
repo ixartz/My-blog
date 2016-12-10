@@ -7,7 +7,7 @@ paginate: 10
 url: blog.ixartz.com
 baseurl: /
 
-google_analytics: 'UA-38565900-1'
+google_analytics: 'UA-88747769-1'
 disqus: true
 disqus_shortname: 'ixartz'
 
