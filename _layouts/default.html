@@ -17,11 +17,11 @@
 
   {% include navigation.html %}
 
-  {% if page.profile %}
+  {% if page.profile and page.profile != "404" %}
       {% include profile.html %}
   {% endif %}
 
-  <section id="wrapper" class="{% if page.profile == "index" %}home{% elsif page.profile == "about" %}about{% endif %}">
+  <section id="wrapper" class="{% if page.profile == "index" %}home{% elsif page.profile == "about" %}about{% elsif page.profile == "404" %}err404{% endif %}">
     {{ content }}
   </section>
 
