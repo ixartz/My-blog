@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Passion for Computer Science - A blog where I share my knowledge and tricks about programming…",
   "main": "index.js",
-  "dependencies": {
-    "uglifycss": "0.0.25"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
