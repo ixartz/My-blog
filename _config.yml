@@ -36,4 +36,8 @@ defaults:
         values:
             layout: post
 
-gems: [jekyll-paginate]
+minibundle:
+ minifier_commands:
+   css: node_modules/.bin/uglifycss -
+
+gems: [jekyll-paginate, jekyll/minibundle]
