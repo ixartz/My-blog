@@ -36,4 +36,6 @@ defaults:
         values:
             layout: post
 
+exclude: [Gemfile, Gemfile.lock, package.json, Rakefile]
+
 gems: [jekyll-paginate, jekyll/minibundle]
