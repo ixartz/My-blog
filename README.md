@@ -2,6 +2,21 @@
 
 Passion for Computer Science - A blog where I share my knowledge and tricks about programming…
 
+## Setup environment
+
+This project is based on Ruby environment and you need to install dependencies:
+
+    0. gem install bundler
+    0. bundle install
+
+## Launch locally
+
+    $ bundle exec rake start
+
+## Clean up project
+
+    $ bundle exec rake clobber
+
 ## Copyright & License for Jekyll themes
 
 Copyright (c) 2015 [Cactus Authors](https://github.com/koenbok/Cactus/blob/master/AUTHORS) -  Released under the MIT License.
