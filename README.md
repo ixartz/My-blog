@@ -6,8 +6,8 @@ Passion for Computer Science - A blog where I share my knowledge and tricks abou
 
 This project is based on Ruby environment and you need to install dependencies:
 
-    0. gem install bundler
-    0. bundle install
+    1. gem install bundler
+    2. bundle install
 
 ## Launch locally
 
