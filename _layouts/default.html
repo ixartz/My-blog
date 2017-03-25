@@ -20,7 +20,7 @@
       {% include profile.html %}
   {% endif %}
 
-  <section id="wrapper" class="{% if page.profile == "index" %}home{% elsif page.profile == "about" %}about{% elsif page.profile == "404" %}err404{% endif %}">
+  <section class="{% if page.profile == "index" %}home{% elsif page.profile == "about" %}about{% elsif page.profile == "404" %}err404{% endif %} wrapper">
     {{ content }}
   </section>
 

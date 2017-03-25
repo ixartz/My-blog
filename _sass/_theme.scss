@@ -69,7 +69,7 @@ h2 {
 	color: #bbb;
 }
 
-.profile #wrapper {
+.profile .wrapper {
 	padding: 100px 40px 0px;
 	max-width: 600px;
 	margin: 0 auto;
@@ -138,29 +138,29 @@ nav.main-nav a.cta {
 	margin-left: 12px;
 }
 
-#wrapper {
+.wrapper {
   max-width: 600px;
   margin: 0 auto;
   padding: 60px 40px 100px 40px;
 }
 
-#wrapper.home {
+.wrapper.home {
 	max-width: 768px;
 	margin: 0 auto;
 	padding: 0px 40px 20px 40px;
 }
 
-#wrapper.about {
+.wrapper.about {
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 0px 40px 20px 40px;
 }
 
-#wrapper.err404 {
+.wrapper.err404 {
 	text-align: center;
 }
 
-#wrapper.err404 p {
+.wrapper.err404 p {
 	text-align: center;
 }
 
@@ -654,7 +654,7 @@ h2.month {
 
 /* Media Queries */
 @media screen and (max-width: 540px) {
-	#wrapper { padding:20px 20px 20px 20px;}
+	.wrapper { padding:20px 20px 20px 20px; }
 	#header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
 	.post { margin: 40px 0; }
 	#footer { margin-top: 60px; }
