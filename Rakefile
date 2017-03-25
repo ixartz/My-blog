@@ -27,7 +27,7 @@ end
 
 namespace :jekyll do
   desc 'Compile the site with Jekyll'
-  task build: [:clean, :'sass:compile'] do
+  task build: [:clean, :'sass:build'] do
     sh %{jekyll build}
   end
 
