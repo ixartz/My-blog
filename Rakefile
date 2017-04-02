@@ -1,5 +1,6 @@
 require 'rake/clean'
 require 'rubocop/rake_task'
+require 'html-proofer'
 
 SASS_CONFIG = {
   common_options: '--scss --sourcemap=none',
@@ -34,6 +35,15 @@ namespace :jekyll do
   desc 'Compile and serve the site with Jekyll, recompiling when necessary'
   task serve: :clean do
     sh %{jekyll serve}
+  end
+end
+
+namespace :test do
+  options = { :check_html => true }
+
+  desc 'Test the site in development environment'
+  task dev: :'jekyll:build' do
+    HTMLProofer.check_directory('./_site', options).run
   end
 end
 
