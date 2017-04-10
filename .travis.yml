@@ -1,0 +1,8 @@
+language: ruby
+
+rvm:
+  - 2.3.3
+
+script: bundle exec rake test:dev
+
+sudo: false # route your build to the container-based infrastructure for a faster build

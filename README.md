@@ -13,6 +13,10 @@ This project is based on Ruby environment and you need to install dependencies:
 
     $ bundle exec rake start
 
+## Run tests on local environment
+
+    $ bundle exec rake test:dev
+
 ## Clean up project
 
     $ bundle exec rake clobber
