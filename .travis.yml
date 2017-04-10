@@ -5,4 +5,8 @@ rvm:
 
 script: bundle exec rake test:dev
 
+branches:
+  only:
+    - master
+
 sudo: false # route your build to the container-based infrastructure for a faster build
