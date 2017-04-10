@@ -1,5 +1,7 @@
 # Ixartz's technical blog
 
+[![Build Status](https://travis-ci.org/ixartz/My-blog.svg?branch=master)](https://travis-ci.org/ixartz/My-blog)
+
 Passion for Computer Science - A blog where I share my knowledge and tricks about programming…
 
 ## Setup environment
