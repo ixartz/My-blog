@@ -42,7 +42,7 @@ namespace :test do
   options = { :check_html => true }
 
   desc 'Test the site in development environment'
-  task dev: :'jekyll:build' do
+  task :dev do
     HTMLProofer.check_directory('./_site', options).run
   end
 end
