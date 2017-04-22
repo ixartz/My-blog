@@ -3,7 +3,7 @@ language: ruby
 rvm:
   - 2.3.3
 
-script: bundle exec rake test:dev
+script: bundle exec rake jekyll:build && bundle exec rake test:dev
 
 branches:
   only:
