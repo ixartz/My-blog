@@ -34,7 +34,7 @@ namespace :jekyll do
 
   desc 'Compile the site with Jekyll for production environment'
   task prod: [:clean, :'sass:build'] do
-    sh %{JEKYLL_ENV=development jekyll build}
+    sh %{JEKYLL_ENV=production jekyll build}
   end
 
   desc 'Compile and serve the site with Jekyll, recompiling when necessary'
