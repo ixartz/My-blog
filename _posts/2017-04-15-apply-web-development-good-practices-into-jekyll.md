@@ -20,7 +20,6 @@ Lately, I was working to enable an HTTPS-encrypted connection to my Jekyll blog.
 
 * Manage a list of dependencies with a Gemfile
 * Implement a Ruby task runner, Rake
-* Use a static code analyzer, Rubocop
 * Minify CSS/JS
 * Asset fingerprinting
 * Continuous integration
@@ -40,7 +39,7 @@ The first step requires you to install Bundler and Gemrat with <a href="https://
 
 In this project, we need to use several dependencies. These dependencies are stored into a Gemfile. We will fill this file using Gemrat that we have previously install:
 
-    $ gemrat jekyll jekyll-minibundle rake rubocop html-proofer
+    $ gemrat jekyll jekyll-minibundle rake html-proofer
 
 In the next section, we will cover each dependency and you will have a quick understanding when we start using them.
 
@@ -49,3 +48,15 @@ Unfortunately, the above command is to enough to install the dependencies. Indee
     $ bundle install
 
 After that, all dependencies we need for this tutorial will be available in our project.
+
+## Custom plugins on GitHub Pages
+
+We have installed a plugin named *jekyll-minibundle*. For security reasons, GitHub have disabled custom plugins. It means we cannot use *jekyll-minibundle* if we deploy directly to GitHub Pages. The only way is to generated the output static files and push them to your repository.
+
+## Use Rake as task runner
+
+For those who do not know what is a task runner, it is a tool performing a repetitive task. Here, we will implement tasks into the Rakefile:
+
+    * Build your scss files
+    * Build your Jekyll site/blog
+    * Test if your generated files are valid
