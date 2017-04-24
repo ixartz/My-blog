@@ -9,7 +9,7 @@ tags:
   - Rake
   - Gemfile
   - Minify
-  - fingerprinting
+  - Fingerprints
   - Continuous integration
   - Continuous deployment
   - Content delivery network
@@ -19,9 +19,9 @@ tags:
 Lately, I was working to enable an HTTPS-encrypted connection to my Jekyll blog. For your information, it is currently hosted on GitHub Pages. But, I end up by applying a lot of web development good practice into a static blog:
 
 * Manage a list of dependencies with a Gemfile
+* Asset fingerprints
 * Implement a Ruby task runner, Rake
 * Minify CSS/JS
-* Asset fingerprinting
 * Continuous integration
 * Continuous deployment
 * Content delivery network
@@ -52,6 +52,18 @@ After that, all dependencies we need for this tutorial will be available in our 
 ## Custom plugins on GitHub Pages
 
 We have installed a plugin named *jekyll-minibundle*. For security reasons, GitHub have disabled custom plugins. It means we cannot use *jekyll-minibundle* if we deploy directly to GitHub Pages. The only way is to generated the output static files and push them to your repository.
+
+The reason we use use *jekyll-minibundle* is it provides an asset fingerprint. An asset fingerprint is to control caching of static resources. We will go deeper about this practice in the next section. *jekyll-minibundle* also implements an asset bundle but in this article, we will not use it because we will depend on Sass. Indeed, we can indicate to Sass compiler to pack all your files into one output CSS file and compress it.
+
+## Asset fingerprint
+
+After installing dependencies, we need to configure our Jekyll in order to load *jekyll-minibundle*. Open *_config.yml* and add this following code at the end:
+
+{% highlight yml %}
+gems: [jekyll/minibundle]
+{% endhighlight %}
+
+Then, find all the location in your project to add the fingerprint:
 
 ## Use Rake as task runner
 
