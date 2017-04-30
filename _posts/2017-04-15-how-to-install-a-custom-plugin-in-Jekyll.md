@@ -72,3 +72,5 @@ For those who do not know what is a task runner, it is a tool performing a repet
 ### Deploy your Jekyll
 
 ## Conclusion
+
+We are at the end of this tutorial about using a custom plugin on Jekyll. We have also implemented some tasks with Rake to build, test and deploy your Jekyll easily. In the next article, we will set up a continuous integration and continuous deployment to do this tasks automatically for us.
