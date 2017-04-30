@@ -93,6 +93,22 @@ end
 
 ### Deploy your Jekyll
 
+{% highlight ruby %}
+namespace :deploy do
+  desc 'Deploy the generated files on GitHub'
+  task :pages do
+    repo = `git remote get-url origin`.tr("\n","")
+
+    FileUtils.cd('_site', :verbose => true) do
+        sh %{rm -rf .git}
+        sh %{git init && git add .}
+        sh %{git commit -m 'Deploy on GitHub pages'}
+        sh %{git push -f #{repo} master:test}
+    end
+  end
+end
+{% endhighlight %}
+
 ## Conclusion
 
 We are at the end of this tutorial about using a custom plugin on Jekyll. We have also implemented some tasks with Rake to build, test and deploy your Jekyll easily. In the next article, we will set up a continuous integration and continuous deployment to do this tasks automatically for us.
