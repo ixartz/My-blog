@@ -37,7 +37,9 @@ After that, all dependencies we need for this tutorial will be available in our 
 
 ## Asset fingerprint
 
-An asset fingerprint is to control caching of static resources.
+The principle of a cache is to keep a copy of some file on the browser storage. Especially, we want to cache static files that do not change often and the idea is to serve these files quickly. Unfortunately, these files will not be updated any more if we set the expiration date too far. On the other hand, by setting a too close expiration date, the gain of browser caching will be limited.
+
+The solution is to implement an asset fingerprint and it is simply the best of both worlds. It controls caching of static resources. Indeed, we will add fingerprints in the URLs for static content. So, we will keep the same fingerprint until the file is changed.
 
 ### Jekyll minibundle plugin
 
@@ -57,8 +59,16 @@ Then, find all the location in your project to add the fingerprint. For example,
 {% endraw %}
 {% endhighlight %}
 
-Of course, you can add a fingerprint for your JavaScript file.
+Of course, you can also add a fingerprint for your JavaScript files.
 
 ## Rake task runner
 
 For those who do not know what is a task runner, it is a tool performing a repetitive task. Here, we will implement tasks into the Rakefile in order to build your Jekyll site, test if your generated files are valid and deploy to GitHub pages.
+
+### Build your Jekyll
+
+### Test your Jekyll
+
+### Deploy your Jekyll
+
+## Conclusion
