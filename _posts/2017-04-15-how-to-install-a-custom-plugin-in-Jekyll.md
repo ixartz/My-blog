@@ -63,11 +63,33 @@ Of course, you can also add a fingerprint for your JavaScript files.
 
 ## Rake task runner
 
-For those who do not know what is a task runner, it is a tool performing a repetitive task. Here, we will implement tasks into the Rakefile in order to build your Jekyll site, test if your generated files are valid and deploy to GitHub pages.
+For those who do not know what is a task runner, it is a tool performing a repetitive task. The reason why we need Rake is because it is not possible to use a custom plugin on GitHub pages. It means we are not able to use Jekyll source files directly.
+
+The solution is to implement tasks in the Rakefile in order to build your Jekyll site, test if your generated files are valid and deploy to GitHub pages.
 
 ### Build your Jekyll
 
+{% highlight ruby %}
+namespace :jekyll do
+  desc 'Compile your Jekyll source files'
+  task build: :clean do
+    sh %{jekyll build}
+  end
+end
+{% endhighlight %}
+
 ### Test your Jekyll
+
+{% highlight ruby %}
+namespace :test do
+  options = { :check_html => true }
+
+  desc 'Test the generated files'
+  task :html do
+    HTMLProofer.check_directory('./_site', options).run
+  end
+end
+{% endhighlight %}
 
 ### Deploy your Jekyll
 

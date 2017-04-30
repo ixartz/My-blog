@@ -27,17 +27,17 @@ namespace :sass do
 end
 
 namespace :jekyll do
-  desc 'Compile the site with Jekyll for development environment'
+  desc 'Compile Jekyll source files for development environment'
   task build: [:clean, :'sass:build'] do
     sh %{jekyll build}
   end
 
-  desc 'Compile the site with Jekyll for production environment'
+  desc 'Compile Jekyll source files for production environment'
   task prod: [:clean, :'sass:build'] do
     sh %{JEKYLL_ENV=production jekyll build}
   end
 
-  desc 'Compile and serve the site with Jekyll, recompiling when necessary'
+  desc 'Compile and serve Jekyll source files, recompiling when necessary'
   task :serve do
     sh %{jekyll serve --drafts}
   end
@@ -46,9 +46,16 @@ end
 namespace :test do
   options = { :check_html => true }
 
-  desc 'Test the site in development environment'
+  desc 'Test the generated files'
   task :html do
     HTMLProofer.check_directory('./_site', options).run
+  end
+end
+
+namespace :deploy do
+  desc 'Test the generated files'
+  task :pages do
+
   end
 end
 
