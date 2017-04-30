@@ -4,6 +4,12 @@ date: 2017-04-15 23:18:24
 description: Add an asset fingerprint for Jekyll
 categories:
   - Jekyll
+tags:
+  - GitHub
+  - Rake
+  - Gemfile
+  - Minify
+  - Fingerprints
 ---
 In this article, I will explain how to install a custom plugin in your favorite static generator, Jekyll. At least, it is my favorite one. We will also use this custom plugin on GitHub Pages.
 
