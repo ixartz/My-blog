@@ -55,7 +55,10 @@ end
 namespace :deploy do
   desc 'Test the generated files'
   task :pages do
-
+    sh %{cd _site}
+    sh %{git init && git add .}
+    sh %{git commit -m 'Deploy on GitHub pages'}
+    sh %{git push -f `git remote get-url origin` master:test}
   end
 end
 
