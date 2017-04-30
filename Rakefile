@@ -58,10 +58,10 @@ namespace :deploy do
     repo = `git remote get-url origin`.tr("\n","")
 
     FileUtils.cd('_site', :verbose => true) do
-        sh %{rm -rf .git}
-        sh %{git init && git add .}
-        sh %{git commit -m 'Deploy on GitHub pages'}
-        sh %{git push -f #{repo} master:test}
+      sh %{rm -rf .git}
+      sh %{git init && git add .}
+      sh %{git commit -m 'Deploy on GitHub pages'}
+      sh %{git push -f #{repo} master:gh-pages}
     end
   end
 end
