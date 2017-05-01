@@ -11,7 +11,7 @@ tags:
   - Minify
   - Fingerprints
 ---
-In this article, I will explain how to install a custom plugin in your favorite static generator, Jekyll. At least, it is my favorite one. We will also use this custom plugin on GitHub Pages.
+![Jekyll, blogging system]({{ site.baseurl }}assets/images/posts/jekyll-logo.png){: .alignright}In this article, I will explain how to install a custom plugin in your favorite static generator, Jekyll. At least, it is my favorite one. We will also use this custom plugin on GitHub Pages.
 
 This tutorial will be based on a real case. Indeed, the goal is to have an asset fingerprint for Jekyll. Do not worry if you do not know what is the asset fingerprint. It is a way to control browser cache and we will go deeper about this technique in the following section.
 
@@ -25,7 +25,7 @@ The only way is to generate the static files in your local machine and push them
 
 *You should have already installed Jekyll in your local environment. If it is not the case, you can <a href="https://jekyllrb.com/docs/installation/" target="_blank">follow this tutorial</a>.*
 
-The first step requires you to install Bundler and Gemrat with <a href="https://rubygems.org" target="_blank">RubyGems</a>:
+![Bundler, manage a Ruby application's gems]({{ site.baseurl }}assets/images/posts/gem-bundler.png){: .alignright}The first step requires you to install Bundler and Gemrat with <a href="https://rubygems.org" target="_blank">RubyGems</a>:
 
     $ gem install bundler gemrat
 
@@ -165,4 +165,4 @@ Then, open your favorite browser and go to your website. You will see your stati
 
 ## Conclusion
 
-We are at the end of this tutorial about using a custom plugin on Jekyll. We have also implemented some tasks with Rake to build, test and deploy your Jekyll easily. In the next article, we will set up a continuous integration and continuous deployment to do these tasks automatically for us.
+![Travis CI, continuous integration and continuous deployment]({{ site.baseurl }}assets/images/posts/tavis-ci.jpg){: .alignright}We are at the end of this tutorial about using a custom plugin on Jekyll. We have also implemented some tasks with Rake to build, test and deploy your Jekyll easily. In the next article, we will set up a continuous integration and continuous deployment to do these tasks automatically for us.
