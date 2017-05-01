@@ -19,7 +19,7 @@ This tutorial will be based on a real case. Indeed, the goal is to have an asset
 
 We will install a plugin named *jekyll minibundle*. For security reasons, GitHub have disabled custom plugins. It means we cannot use it directly if we deploy to GitHub Pages.
 
-Generating the static files in your local machine and pushing them to your GitHub repository is the only way.
+The only way is to generate the static files in your local machine and push them to your GitHub repository.
 
 ### Install dependencies
 
@@ -29,7 +29,7 @@ The first step requires you to install Bundler and Gemrat with <a href="https://
 
     $ gem install bundler gemrat
 
-In this project, we need to use several dependencies. These dependencies are stored into a Gemfile. We will fill this file using Gemrat that we have previously install:
+In this project, we need to use several dependencies. These dependencies are stored into a Gemfile. We will fill this file using Gemrat that we have previously installed along with Bundler:
 
     $ gemrat jekyll jekyll-minibundle rake html-proofer
 
@@ -49,7 +49,7 @@ Implementing an asset fingerprint is a solution and it is simply the best of bot
 
 ### Jekyll minibundle plugin
 
-The reason we use use *jekyll minibundle* is that it provides an asset fingerprint. *jekyllminibundle* also implements an asset bundle but in this article, we will not use it.
+The reason we use *jekyll minibundle* is that it provides an asset fingerprint. *jekyll minibundle* also implements an asset bundle but in this article, we will not use it.
 
 After installing dependencies, we need to configure our Jekyll in order to load *jekyll minibundle*. Open *_config.yml* and add this following code at the end:
 
@@ -87,7 +87,7 @@ require 'rake/clean'
 CLEAN.include '_site'
 {% endhighlight %}
 
-By default, the generated files will be placed into *_site* folder. So, when we run a clean on rake, we want to remove the *_site* folder.
+By default, the generated files will be placed into *_site* folder. So, when we run a clean with rake, we want to remove the *_site* folder.
 
 ### Build your Jekyll
 
@@ -149,7 +149,7 @@ namespace :deploy do
 end
 {% endhighlight %}
 
-The idea of deploy task is we create a new local git repository. It is followed by adding a new commit and it finally push to the remote branch named gh-pages.
+The idea of deploy task is we create a new local git repository. It will add a new commit and it will push to the remote branch named gh-pages.
 
 *Note: It is recommended to put _site folder in .gitignore file, we should avoid using Git subtree*
 
@@ -165,4 +165,4 @@ Then, open your favorite browser and go to your website. You will see your stati
 
 ## Conclusion
 
-We are at the end of this tutorial about using a custom plugin on Jekyll. We have also implemented some tasks with Rake to build, test and deploy your Jekyll easily. In the next article, we will set up a continuous integration and continuous deployment to do this tasks automatically for us.
+We are at the end of this tutorial about using a custom plugin on Jekyll. We have also implemented some tasks with Rake to build, test and deploy your Jekyll easily. In the next article, we will set up a continuous integration and continuous deployment to do these tasks automatically for us.
