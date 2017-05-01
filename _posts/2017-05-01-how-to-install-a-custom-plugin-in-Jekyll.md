@@ -1,6 +1,6 @@
 ---
 title: 'How to install a custom plugin in Jekyll'
-date: 2017-04-15 23:18:24
+date: 2017-05-01 14:18:24
 description: Add an asset fingerprint for Jekyll
 categories:
   - Jekyll
