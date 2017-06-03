@@ -9,15 +9,15 @@ tags:
   - Continuous integration
   - Continuous deployment
 ---
-In my previous article <a href="{{ site.baseurl }}how-to-install-a-custom-plugin-in-Jekyll/" target="_blank">on how to install a custom plugin in Jekyll</a>, we have added an asset fingerprints plugin. Unfortunately, we need to run manually some commands to build, test and deploy Jekyll to GitHub Pages.
+In my previous article <a href="{{ site.baseurl }}how-to-install-a-custom-plugin-in-Jekyll/" target="_blank">on how to install a custom plugin in Jekyll</a>, we have added an asset fingerprint plugin. Unfortunately, we need to run manually some commands to build, test and deploy Jekyll to GitHub Pages.
 
 We can avoid this pain by running all the steps when we make a Git commit and push. In this tutorial, we set up a continuous integration and deployment for Jekyll with <a href="https://travis-ci.org/" target="_blank">Travis CI</a>.
 
 ## Basic configuration
 
-Let's make a *Hello world* on Ruby with Travis CI. Firstly, we need to create a *.travis.yml* file and add the following code into it:
+Let's make a *Hello world* on Ruby with Travis CI. Firstly, we need to create a *.travis.yml* file and add the following code:
 
-{% highlight yml %}
+{% highlight sh %}
 language: ruby
 
 rvm:
@@ -34,20 +34,62 @@ In *.travis.yml*, we can choose the language and the version we want to use. Her
 
 Now, you can commit the previous file and push it to your repository. Then, we need to enable the test launch.
 
-I suppose you are already on GitHub account and a repository that stores your Jekyll sources. You do not have to create an account on Travis CI. Indeed, you need to use your GitHub login in order to connect on Travis CI.
+I suppose you are already a GitHub account and a repository that stores your Jekyll sources. You do not have to create an account on Travis CI. Indeed, you need to use your GitHub login in order to connect on Travis CI.
 
-On your Travis dashboard, it will show all your repository that have a .travis.yml file and you can enable the project you want to build.
+In your Travis dashboard, it will show all your repositories that have a *.travis.yml* file and you can enable the project you want to build.
 
 ## Continuous integration
 
 The first step of the script is to build our Jekyll site automatically after pushing a commit.
 
-After building our Jekyll, we need to test if the files are correctly generated.
+In my previous, we have already implemented a Rake task to build Jekyll. So, the only thing we need to do is to replace Hello World code by:
+
+{% highlight sh %}
+script: bundle exec rake jekyll:build
+{% endhighlight %}
+
+After building our Jekyll, we need to test if the files are correctly generated. Same here, we have already a Rake command to test if Jekyll is generated properly
+
+{% highlight sh %}
+bundle exec rake test:html
+{% endhighlight %}
+
+Then, the *script* line becomes:
+
+{% highlight sh %}
+script: bundle exec rake jekyll:build && bundle exec rake test:html
+{% endhighlight %}
+
+Basically, the previous code means we want to build Jekyll. If there is no error in the build, we want to test if generated files are good.
 
 ## Continuous deployment
 
-Travis CI have already provided a method to deploy easily on GitHub Pages.
+Travis CI have already provided a method to deploy easily on GitHub Pages. In your *travis.yml* file, you need to add the following configuration:
+
+{% highlight sh %}
+deploy:
+  provider: pages # Upload to GitHub Pages
+  skip_cleanup: true # Prevent Travis deleting generated files
+  local_dir: _site # The Directory where output files are generated
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master # Name of the branch we want to test
+{% endhighlight %}
+
+### How to get a GITHUB_TOKEN
+
+In your GitHub account settings, there is a link named *Personal access tokens*:
+
+After clicking on it, you will see a button *generate a new token*:
+
+You will redirect to a new page. You just need to fill the form by entering a token description and enabling *public_repo* if your Jekyll repository is open source. Otherwise, you need to click on *repo* checkbox.
+
+After submitting the form, you will see the token number and you can copy the value. Then, in your Travis account, go to the build of your Jekyll and find the *Settings* link:
+
+Finally, in *Environment Variable* section, add a new key named GITHUB_TOKEN and paste the GitHub token:
 
 ## Conclusion
 
-By implementing a continuous integration and a continuous deployment, you are not anymore annoyed by manually steps. Now, you can make a commit and push on GitHub, it will automatically trigger Travis CI build. If Travis successfully generates your Jekyll files, it will also deploy on GitHub pages.
+If you have followed all the previous steps, you are now able to make a commit and push to your GitHub repository. It will automatically trigger a build on Travis and if there is no error, it will also deploy on GitHub Pages.
+
+By implementing a continuous integration and a continuous deployment, you are not anymore annoyed by manual steps.
