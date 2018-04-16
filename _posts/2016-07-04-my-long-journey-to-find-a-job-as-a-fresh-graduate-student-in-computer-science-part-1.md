@@ -44,7 +44,7 @@ GitHub have done partnership with cloud provider, domain name management service
 
 ### Consider your projects as products you want to sell
 
-I also suggest you to make your personal projects available to users. You will meet some challenge you can only face when people use it. During high school, I have built a website named <a href="http://faismoiconnaitre.com" target="_blank">Fais moi connaitre.com</a>. One version of the website have attracted more than 10 000 users. At peak hour, it could handle 200/300 users requesting 2 HTTP requests per user every 6 seconds (*200 * 2 * 3600 / 6 = 240 000* requests per hour).
+I also suggest you to make your personal projects available to users. You will meet some challenge you can only face when people use it. During high school, I have built a website named <a href="https://faismoiconnaitre.com" target="_blank">Fais moi connaitre.com</a>. One version of the website have attracted more than 10 000 users. At peak hour, it could handle 200/300 users requesting 2 HTTP requests per user every 6 seconds (*200 * 2 * 3600 / 6 = 240 000* requests per hour).
 
 This means you always try to build high-performing and scalable system. You also need to secure and maintain your application. Especially when your website accepts online payment, like Fais moi connaitre.com.
 
