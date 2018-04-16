@@ -1,3 +1,4 @@
+dist: trusty # update to trusty because issue with cerificate: https://github.com/gjtorikian/html-proofer/issues/376
 language: ruby
 
 rvm:
