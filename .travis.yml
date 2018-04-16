@@ -1,10 +1,14 @@
-dist: trusty # update to trusty because issue with cerificate: https://github.com/gjtorikian/html-proofer/issues/376
 language: ruby
 
 rvm:
   - 2.3.3
 
 script: bundle exec rake jekyll:prod && bundle exec rake test:html
+
+addons:
+  apt:
+    packages:
+    - libcurl4-openssl-dev
 
 branches:
   only:
