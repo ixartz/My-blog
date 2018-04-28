@@ -39,7 +39,7 @@ namespace :jekyll do
 
   desc 'Compile and serve Jekyll source files, recompiling when necessary'
   task :serve do
-    sh %{jekyll serve --drafts}
+    sh %{jekyll serve --drafts --livereload}
   end
 end
 
