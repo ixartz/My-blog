@@ -29,7 +29,7 @@ end
 namespace :jekyll do
   desc 'Compile Jekyll source files for development environment'
   task build: [:clean, :'sass:build'] do
-    sh %{jekyll build}
+    sh %{jekyll build --drafts}
   end
 
   desc 'Compile Jekyll source files for production environment'
