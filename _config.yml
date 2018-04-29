@@ -38,4 +38,6 @@ defaults:
 
 exclude: [Gemfile, Gemfile.lock, package.json, Rakefile, vendor]
 
-gems: [jekyll-paginate, jekyll/minibundle]
+plugins:
+  - jekyll-paginate
+  - jekyll/minibundle
