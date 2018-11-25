@@ -38,6 +38,11 @@ defaults:
 
 exclude: [Gemfile, Gemfile.lock, package.json, Rakefile, vendor]
 
+jekyll-minifier:
+  compress_css: false
+  compress_javascript: false
+
 plugins:
   - jekyll-paginate
   - jekyll/minibundle
+  - jekyll-minifier
