@@ -14,7 +14,9 @@ Lately, I have used intensively React in my work but also in my personal project
 
 First thing you should avoid is to inline arrow function in render. Here is an example:
 
-What is wrong with the previous code? Well, the function is recreated at each rendering of the function. As you can guess, it will hurt application performance by two ways. First one, it will create unnecessary anonymous function.
+What is wrong with the previous code? Well, the function is re-created at each rendering of parent component. As you can guess, it will hurt application performance by two ways. First one, it will create unnecessary anonymous function.
+
+The second one, because at each rendering of parent component it creates a new function, React will also trigger a re-render of child component.
 
 #### Solution
 
