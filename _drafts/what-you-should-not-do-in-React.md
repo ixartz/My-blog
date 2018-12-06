@@ -20,6 +20,8 @@ Then, because it creates a new anonymous function, React will also trigger a re-
 
 #### Solution
 
+It is very easy to solve, you should not declare your arrow function inside of render. You should move the arrow function as class field. Then, child component props should refer to this class field.
+
 ### Nested state
 
 I made a mistake to try working with nested state in React. A nested state is putting object into react State. For example this following code is a nested state:
@@ -29,10 +31,12 @@ I made a mistake to try working with nested state in React. A nested state is pu
 Here is the solutions you can follow based on your context:
 
 1. Just change your design and avoid using nested state
-2. Use destructuring,
+2. Use destructuring, it will un-nested your object into the state
 3. You can also create a new object yourself when you make a change. But, what I suggest is to use immutable library. Facebook provides Immutable.js, it will do the job.
 
 ### Copy props to state
+
+This React anti-pattern needs a post itself to cover fully this subject. I will not go deeper but you can find all the information at this location.
 
 ### target="_blank" security
 
@@ -40,4 +44,16 @@ Thanks to ESLint, I discover there is a security issue with this simple code:
 
 I could not imagine with this one line of code, it can bring a vulnerability to your application.
 
-Indeed,
+Indeed, in the targeted link with another simple code: . It can redirect to malicious website.
+
+#### Solution
+
+In your link, you just need to add
+
+and you should get the following code:
+
+Now, you are safe to redirection with opener.
+
+## Conclusion
+
+I have just shared 5 mistakes I have done when I was working in React. I am continuing to learn but I hope you can avoid doing the same mistake as me. If you have also some other anti-pattern, do not hesitate to leave below a comment.
