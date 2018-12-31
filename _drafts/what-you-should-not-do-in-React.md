@@ -1,7 +1,7 @@
 ---
-title: '5 bad practices that you should not do in React'
-date: 2018-12-02
-description:
+title: '4 bad practices that you should not do in React'
+date: 2018-12-31
+description: Mistakes I have done in React
 categories:
   - React
 tags:
@@ -34,9 +34,13 @@ Here is the solutions you can follow based on your context:
 2. Use destructuring, it will un-nested your object into the state
 3. You can also create a new object yourself when you make a change. But, what I suggest is to use immutable library. Facebook provides Immutable.js, it will do the job.
 
-### Copy props to state
+### Show/Hide component with conditional rendering
 
-This React anti-pattern needs a post itself to cover fully this subject. I will not go deeper but you can find all the information at this location.
+As you may know, React allows you to render a component based on conditions. I thought I could benefit this conditional rendering to show/hide components. Actually, it was a wrong idea. Indeed, even if it works well but behind the scene, the component was unnecessarily re-created each time we show/hide the element.
+
+#### Solution
+
+The best way in React to show or hide a component is to use CSS. A simple **display** CSS property can be used to show/hide a component without re-creating it.
 
 ### target="_blank" security
 
@@ -56,4 +60,4 @@ Now, you are safe to redirection with opener.
 
 ## Conclusion
 
-I have just shared 5 mistakes I have done when I was working in React. I am continuing to learn but I hope you can avoid doing the same mistake as me. If you have also some other anti-pattern, do not hesitate to leave below a comment.
+I have just shared 4 mistakes I have done when I was working in React. I am continuing to learn but I hope you can avoid doing the same mistake as me. If you have also some other anti-pattern, do not hesitate to leave below a comment.
