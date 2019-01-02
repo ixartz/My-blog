@@ -8,13 +8,13 @@ tags:
   - React
   - Tips
 ---
-Lately, I have used intensively React in my work but also in my personal project. Here, I will share what mistakes I have done in my React code. And, what you should also avoid doing in your project.
+Lately, I have used intensively React in my work but also in my personal project. Here, I will share the mistakes I have done in my React code. And, what you should also avoid doing in your project.
 
-### Arrow function in render
+### Arrow function in the render function
 
-First thing you should avoid is to inline arrow function in render. Here is an example:
+The first thing you should avoid is to inline arrow function in React's render function. Here is an example:
 
-What is wrong with the previous code? Well, the function is re-created at each rendering of parent component. As you can guess, it will hurt application performance by two ways. First, it will create unnecessary anonymous function at each rendering of parent component.
+What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it will hurt application performance in two ways. First, it will create an unnecessary anonymous function at each rendering of parent component.
 
 Then, because it creates a new anonymous function, React will also trigger a re-render of child component.
 
