@@ -27,7 +27,7 @@ The preparation journey will be a long one. I highly suggest finding someone who
 
 First, you will need to review your algorithm courses. Or, you can find a really nice course on Internet:
 
-* <a href="https://www.coursera.org/learn/introduction-to-algorithms" target="_blank">Algorithms</a> and <a href="https://www.coursera.org/learn/java-data-structures-algorithms-2" target="_blank">Part II</a> by Princeton University
+* <a href="https://www.coursera.org/learn/algorithms-part1" target="_blank">Algorithms</a> and <a href="https://www.coursera.org/learn/algorithms-part2" target="_blank">Part II</a> by Princeton University
 * <a href="https://www.coursera.org/specializations/algorithms" target="_blank">Algorithms Specialization</a> by Stanford University
 
 #### Books
