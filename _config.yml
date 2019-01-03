@@ -46,3 +46,4 @@ plugins:
   - jekyll-paginate
   - jekyll/minibundle
   - jekyll-minifier
+  - jekyll-target-blank
