@@ -10,6 +10,8 @@ tags:
 ---
 Lately, I have used intensively React in my work but also in my personal project. Here, I will share the mistakes I have done in my React code. And, what you should also avoid doing in your project.
 
+You can access to one of my personal project using React [at this location](https://github.com/ixartz/handwritten-digit-recognition-tensorflowjs). The 4 mistakes I list here was done in this project where I implement a digit recognizer. This project help me learn Redux, Tensorflow.js, styled-components, Ant Design, etc. I am very happy to share what I learn during implement this deep learning with React in this post.
+
 ### Arrow function in the render function
 
 The first thing you should avoid is to inline arrow function in React's render function. Here is an example:
@@ -91,7 +93,7 @@ Each solution has his own advantages and disadvantage. You should choose a solut
 
 ### Show/Hide component with conditional rendering
 
-As you may know, React allows you to render a component based on conditions. I thought I could benefit this conditional rendering to show/hide components. Actually, it was a wrong idea. Indeed, even if it works well but behind the scene, the component was unnecessarily re-created each time we show/hide the element.
+As you may know, React allows you to render a component based on conditions. I thought I could benefit this conditional rendering to show/hide components. Actually, you should use conditional rendering for toggling small components. But, for complex ones, you should avoid. Indeed, even if it works well but behind the scene, the component was unnecessarily re-created each time we show/hide the element.
 
 {% highlight jsx %}
 class Button extends React.Component {
@@ -115,35 +117,75 @@ class Button extends React.Component {
         <button onClick={this.handleClick}>
           Click me!
         </button>
-        // Here is the conditional rendering
-        {this.state.show && <Label />}
+        {/* Here is the conditional rendering */}
+        {this.state.show && <ComplexComponent />}
       </div>
     );
   }
 }
 {% endhighlight %}
 
-The above code will toggle **Label** component each time when we click on the button. It works very well to hide/show the **Label** component for each click. But, there is a major drawback: each time the show back the **Label** component, it will instantiate a new instance and it will re-create a new one from scratch.
+The above code will toggle **ComplexComponent** component each time when we click on the button. It works very well to hide/show the **ComplexComponent** component for each click. But, there is a major drawback: each time the show back the **ComplexComponent** component, it will instantiate a new instance and it will re-create a new one from scratch.
+
+You should avoid using conditional rendering. Especially, when the **ComplexComponent** component has a resource-consuming constructor and/or mounting process.
 
 #### Solution
 
 The best way in React to show or hide a component is to use CSS. A simple **display** CSS property can be used to show/hide a component without re-creating it.
 
+Below, you can find an example where **display** CSS property:
+
+{% highlight css %}
+.hidden {
+  display: none;
+}
+{% endhighlight %}
+
+{% highlight jsx %}
+render() {
+  const classname = this.state.show ? null : 'hidden';
+
+  return (
+    <div>
+      <button onClick={this.handleClick}>
+        Click me!
+      </button>
+      {/* Here is the conditional rendering */}
+      <ComplexComponent className={classname} />
+    </div>
+  );
+}
+{% endhighlight %}
+
 ### target="_blank" security
 
 Thanks to ESLint, I discover there is a security issue with this simple code:
 
-I could not imagine with this one line of code, it can bring a vulnerability to your application.
+{% highlight jsx %}
+<a href="http://malicious-website.com" target="_blank">Click here!</a>
+{% endhighlight %}
 
-Indeed, in the targeted link with another simple code: . It can redirect to malicious website.
+I could not imagine with this one line of code on your website, it can bring a vulnerability to your application.
+
+Indeed, on the malicious website, the attacker can put a simple code:
+
+{% highlight jsx %}
+window.opener.location = "http://fake-facebook.com";
+{% endhighlight %}
+
+It can redirect the tab where your website was displayed to a fake website.
 
 #### Solution
 
-In your link, you just need to add
+In your link, you just need to add *rel="noopener noreferrer"*
 
 and you should get the following code:
 
-Now, you are safe to redirection with opener.
+{% highlight jsx %}
+<a href="http://malicious-website.com" target="_blank" rel="noopener noreferrer">Click here!</a>
+{% endhighlight %}
+
+Now, you are safe to redirection related to target="_blank".
 
 ## Conclusion
 
