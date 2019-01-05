@@ -29,7 +29,7 @@ script: ruby -e "puts 'Hello world'"
 sudo: false
 {% endhighlight %}
 
-In *.travis.yml*, we can choose the language and the version we want to use. Here, we will use Ruby *2.3.3*. Mostly because Jekyll is written in Ruby. And, we use *2.3.3* because this version is already available in Travis   build environment.
+In *.travis.yml*, we can choose the language and the version we want to use. Here, we will use Ruby *2.3.3*. Mostly because Jekyll is written in Ruby. And, we use *2.3.3* because this version is already available in Travis to build environment.
 
 ## Connect your GitHub with Travis CI
 
@@ -69,7 +69,7 @@ Basically, the previous code means we want to build Jekyll. If there is no error
 
 ## Continuous deployment
 
-Travis CI have already provided a method to deploy easily on GitHub Pages. In your *travis.yml* file, you need to add the following configuration:
+Travis CI has already provided a method to deploy easily on GitHub Pages. In your *travis.yml* file, you need to add the following configuration:
 
 {% highlight sh %}
 deploy:
@@ -100,7 +100,7 @@ After submitting the form, you will see the token number and you can copy the va
 
 ![Link to Travis CI settings]({{ site.baseurl }}assets/images/posts/link-settings-travis-ci.png){: .aligncenter}
 
-Finally, in *Environment Variable* section, add a new key named GITHUB_TOKEN and paste the GitHub token:
+Finally, in the *Environment Variable* section, add a new key named GITHUB_TOKEN and paste the GitHub token:
 
 ![Environment variables Travis]({{ site.baseurl }}assets/images/posts/environment-variables-setting-travis.png){: .aligncenter}
 
