@@ -15,7 +15,7 @@ Lately, I spend my time setting up a new dedicated server after receiving a mail
 
 ## Set up a virtual IP on Debian
 
-######*I suppose that your new server is already set up*######
+*I suppose that your new server is already set up*
 
 A virtual IP is very useful in several cases. For example, it can be used in high availability network. Here, we use a virtual IP for moving one server to another in few seconds.
 
@@ -84,7 +84,7 @@ Of course, I had to install a Mail Transfer Agent (MTA) and I chose Exim4 becaus
 
 I spent several nights to find how to send an email through an virtual IP with Exim. Unfortunately, I find anything to solve this problem.
 
-######*I will anyway describe installation and configuration steps*######
+*I will anyway describe installation and configuration steps*
 
 Installing Exim4 is quite straightforward:
 
@@ -106,7 +106,7 @@ Do not forget to restart your HTTP server if your websites need to send emails. 
 
 Now, you can send a mail but not from your virtual IP.
 
-###Sendmail, the Messiah###
+### Sendmail, the Messiah
 
 Firstly, we need to install Sendmail using a package manager:
 
