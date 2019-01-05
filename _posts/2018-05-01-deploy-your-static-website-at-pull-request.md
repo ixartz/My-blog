@@ -10,11 +10,11 @@ tags:
   - Netlify
   - Continuous deployment
 ---
-*In the article title, it is referring to static site genertor. Nevertheless, this tutorial can also be applied to your front-end code like React, Angular, etc.*
+*In the article title, it is referring to a static site generator. Nevertheless, this tutorial can also be applied to your front-end code like React, Angular, etc.*
 
-Pull request is part of GitHub flow. Other team members can review and comment the changes. Today, everybody agrees that pull request improves code quality without any doubts. Unfortunately, displaying the source code is limited, you cannot see the change in real environment.
+Pull request is part of GitHub flow. Other team members can review and comment on the changes. Today, everybody agrees that pull request improves code quality without any doubts. Unfortunately, displaying the source code is limited, you cannot see the change in real environment.
 
-The idea about this article is to deploy each pull request. After deploying it, you should be able to see it live in your browser. Other team members can also have access to it with one click. Of course, we do not want to alter production version. So, the deployment happens without merging the pull request.
+The idea about this article is to deploy each pull request. After deploying it, you should be able to see it live in your browser. Other team members can also have access to it with one click. Of course, we do not want to alter the production version. So, the deployment happens without merging the pull request.
 
 ## Deploy Previews, Review Apps
 
@@ -64,7 +64,7 @@ You do not need to do anything to make it work with a pull request. Netlify uses
 
 ![Netlify links Github webhooks]({{ site.baseurl }}assets/images/posts/netlify-github-webhooks.png){: .aligncenter}
 
-When a change is commited and pushed, Netlify can start a build and make deployment.
+When a change is committed and pushed, Netlify can start a build and make the deployment.
 
 ### Configuring netlify.toml file
 
@@ -81,7 +81,7 @@ Configuring with UI, it is great but you do not have versioning. And, when someo
 
 *build* context is the default build configuration. There is another *deploy-preview* context related to the deployment from a pull request.
 
-In the above example, I want to lanch two different build configurations whether it is a pull request or it is from any branches.
+In the above example, I want to launch two different build configurations whether it is a pull request or it is from any branches.
 
 ### Testing, create a pull request
 

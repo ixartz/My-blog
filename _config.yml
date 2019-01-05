@@ -1,9 +1,9 @@
 name: Ixartz's technical blog
-description: Passion for Computer Science
+description: Sharing Engineering Stuff
 
 aboutPage: true
 
-paginate: 10
+paginate: 5
 url: blog.ixartz.com
 baseurl: /
 
@@ -46,3 +46,4 @@ plugins:
   - jekyll-paginate
   - jekyll/minibundle
   - jekyll-minifier
+  - jekyll-target-blank
