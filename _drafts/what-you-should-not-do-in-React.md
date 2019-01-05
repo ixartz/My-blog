@@ -1,6 +1,6 @@
 ---
 title: '4 bad practices that you should not do in React'
-date: 2018-12-31
+date: 2019-01-05
 description: Mistakes I have done in React
 categories:
   - React
@@ -10,7 +10,7 @@ tags:
 ---
 Lately, I have used intensively React in my work but also in my personal project. Here, I will share the mistakes I have done in my React code. And, what you should also avoid doing in your project.
 
-You can access to one of my personal project using React [at this location](https://github.com/ixartz/handwritten-digit-recognition-tensorflowjs). The 4 mistakes I list here was done in this project where I implement a digit recognizer. This project help me learn Redux, Tensorflow.js, styled-components, Ant Design, etc. I am very happy to share what I learn during implement this deep learning with React in this post.
+You can access one of my personal project using React [at this location](https://github.com/ixartz/handwritten-digit-recognition-tensorflowjs). The 4 mistakes I list here was done in this project where I implement a digit recognizer. This project helps me learn Redux, Tensorflow.js, styled-components, Ant Design, etc. I am very happy to share what I learn in this deep learning and React project.
 
 ### Arrow function in the render function
 
@@ -28,13 +28,13 @@ class Button extends React.Component {
 }
 {% endhighlight %}
 
-What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it will hurt application performance in two ways. First, it will create an unnecessary anonymous function at each rendering of parent component.
+What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it will hurt application performance in two ways. First, it will create an unnecessary anonymous function at each rendering of the parent component.
 
-Then, because it creates a new anonymous function, React will also trigger a re-render of child component.
+Then, it creates a new anonymous function, React will also trigger a re-render of child component.
 
 #### Solution
 
-It is very easy to solve, you should not declare your arrow function inside of render. You should move the arrow function as class field. Then, child component props should refer to this class field. Here is the solution:
+It is very easy to solve, you should not declare your arrow function inside of render. You should move the arrow function as a class field. Then, child component props should refer to this class field. Here is a solution:
 
 {% highlight jsx %}
 class Button extends React.Component {
@@ -54,7 +54,7 @@ class Button extends React.Component {
 
 ### Nested state
 
-I made a mistake to try working with nested state in React. A nested state is putting object into react State. For example this following code is a nested state:
+I made a mistake to try working with the nested state in React. A nested state is putting an object into React's state. For example, this following code is a nested state:
 
 {% highlight jsx %}
 let coord = {
@@ -83,13 +83,13 @@ You are expecting the component being rendered again. Unfortunately, it is not t
 
 #### Solution
 
-Here is the solutions you can follow based on your context:
+Here are the solutions you can follow based on your context:
 
 1. Just change your design and avoid using nested state
 2. Use destructuring, it will un-nested your object into the state
-3. You can also create a new object yourself when you make a change. But, what I suggest is to use immutable library. Facebook provides Immutable.js, it will do the job.
+3. You can also create a new object yourself when you make a change. But, what I suggest is to use *immutable* library. Facebook provides *Immutable.js*, it will do the job.
 
-Each solution has his own advantages and disadvantage. You should choose a solution based on the context.
+Each solution has his own advantages and disadvantage. You should choose a solution based on your context.
 
 ### Show/Hide component with conditional rendering
 
@@ -125,15 +125,15 @@ class Button extends React.Component {
 }
 {% endhighlight %}
 
-The above code will toggle **ComplexComponent** component each time when we click on the button. It works very well to hide/show the **ComplexComponent** component for each click. But, there is a major drawback: each time the show back the **ComplexComponent** component, it will instantiate a new instance and it will re-create a new one from scratch.
+The above code will toggle *ComplexComponent* component each time when you click on the button. It works very well to hide/show the *ComplexComponent* component for each click. But, there is a major drawback: each time we display back the *ComplexComponent* component, it will instantiate a new instance and it will re-create a new one from scratch.
 
-You should avoid using conditional rendering. Especially, when the **ComplexComponent** component has a resource-consuming constructor and/or mounting process.
+You should avoid using conditional rendering. Especially, when the *ComplexComponent* component has a resource-consuming constructor and/or mounting process.
 
 #### Solution
 
-The best way in React to show or hide a component is to use CSS. A simple **display** CSS property can be used to show/hide a component without re-creating it.
+The best way in React to show or hide a component is to use CSS. A simple *display* CSS property can be used to show/hide a component without re-creating it.
 
-Below, you can find an example where **display** CSS property:
+Below, you can find an example where *display* CSS property can be applied:
 
 {% highlight css %}
 .hidden {
@@ -167,25 +167,23 @@ Thanks to ESLint, I discover there is a security issue with this simple code:
 
 I could not imagine with this one line of code on your website, it can bring a vulnerability to your application.
 
-Indeed, on the malicious website, the attacker can put a simple code:
+On his malicious website, the attacker can put this following code:
 
 {% highlight jsx %}
 window.opener.location = "http://fake-facebook.com";
 {% endhighlight %}
 
-It can redirect the tab where your website was displayed to a fake website.
+It can redirect the tab where your website was displayed to any website.
 
 #### Solution
 
-In your link, you just need to add *rel="noopener noreferrer"*
-
-and you should get the following code:
+In your link, you just need to add *rel="noopener noreferrer"* and you should get the following code:
 
 {% highlight jsx %}
 <a href="http://malicious-website.com" target="_blank" rel="noopener noreferrer">Click here!</a>
 {% endhighlight %}
 
-Now, you are safe to redirection related to target="_blank".
+Now, you are safe with this security issue.
 
 ## Conclusion
 
