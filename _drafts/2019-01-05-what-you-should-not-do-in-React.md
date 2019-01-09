@@ -1,5 +1,5 @@
 ---
-title: '4 bad practices that you should not do in React'
+title: '4 practices you should avoid in React'
 date: 2019-01-05
 description: Mistakes I have done in React
 categories:
@@ -8,13 +8,13 @@ tags:
   - React
   - Tips
 ---
-Lately, I have used intensively React in my work but also in my personal project. Here, I will share the mistakes I have done in my React code. And, what you should also avoid doing in your project.
+Lately, I've used intensively React in my work but also in my personal project. Here, I'll share the mistakes I've done in my React code. And, what you should also avoid doing in your project.
 
-You can access one of my personal project using React [at this location](https://github.com/ixartz/handwritten-digit-recognition-tensorflowjs). The 4 mistakes I list here was done in this project where I implement a digit recognizer. This project helps me learn Redux, Tensorflow.js, styled-components, Ant Design, etc. I am very happy to share what I learn in this deep learning and React project.
+You can access one of my personal project using React [at this location](https://github.com/ixartz/handwritten-digit-recognition-tensorflowjs). The 4 mistakes I list here was done in this project where I implement a digit recognizer. This project helps me learn Redux, Tensorflow.js, styled-components, Ant Design, etc. I'm very happy to share what I learn in this small deep learning project with React.
 
 ### Arrow function in the render function
 
-The first thing you should avoid is to inline arrow function in React's render function. Here is an example:
+The first thing you should avoid is to inline arrow function in React's render function. The ESLint rule is *react/jsx-no-bind*. Here is an example:
 
 {% highlight jsx %}
 class Button extends React.Component {
@@ -28,13 +28,13 @@ class Button extends React.Component {
 }
 {% endhighlight %}
 
-What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it will hurt application performance in two ways. First, it will create an unnecessary anonymous function at each rendering of the parent component.
+What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it'll hurt application performance in two ways. First, it'll create an unnecessary anonymous function at each rendering of the parent component.
 
-Then, it creates a new anonymous function, React will also trigger a re-render of child component.
+Then, it creates a new anonymous function, React will also trigger a re-render of child component. It'll break *React.PureComponent* or defined *shouldComponentUpdate* optimization.
 
 #### Solution
 
-It is very easy to solve, you should not declare your arrow function inside of render. You should move the arrow function as a class field. Then, child component props should refer to this class field. Here is a solution:
+It's very easy to solve, you shouldn't declare your arrow function inside of render. You should move the arrow function as a class field. Then, child component props should refer to this class field. Here is a solution:
 
 {% highlight jsx %}
 class Button extends React.Component {
@@ -51,6 +51,10 @@ class Button extends React.Component {
   }
 }
 {% endhighlight %}
+
+#### Going deeper
+
+Before changing all your inline function, you should also read these two articles: [React, Inline Functions, and Performance](https://cdb.reacttraining.com/react-inline-functions-and-performance-bdff784f5578) and [Is It Necessary to Apply ESLint jsx-no-bind Rule?](http://shzhangji.com/blog/2018/09/13/is-it-necessary-to-apply-eslint-jsx-no-bind-rule/). They consider *react/jsx-no-bind* is a premature optimization.
 
 ### Nested state
 
@@ -159,15 +163,15 @@ render() {
 
 ### target="_blank" security
 
-Thanks to ESLint, I discover there is a security issue with this simple code:
+It's not only related to React application. But, I learn it when I was working in a React project. Thanks to ESLint, it raises *react/jsx-no-bind* warning and I discover there is a security issue with this simple code:
 
 {% highlight jsx %}
 <a href="http://malicious-website.com" target="_blank">Click here!</a>
 {% endhighlight %}
 
-I could not imagine with this one line of code on your website, it can bring a vulnerability to your application.
+I couldn't imagine with this one line of code on your website, it can bring a vulnerability to your application.
 
-On his malicious website, the attacker can put this following code:
+The attacker can put this following code on his malicious website:
 
 {% highlight jsx %}
 window.opener.location = "http://fake-facebook.com";
@@ -187,4 +191,4 @@ Now, you are safe with this security issue.
 
 ## Conclusion
 
-I have just shared 4 mistakes I have done when I was working in React. I am continuing to learn but I hope you can avoid doing the same mistake as me. If you have also some other anti-pattern, do not hesitate to leave below a comment.
+Here was my 4 mistakes I've done when I was working in React. I'm continuing to learn but I hope you can avoid doing the same mistake as me. If you have also some other anti-pattern, do not hesitate to leave below a comment. If you enjoy this article, I'll share more bad practices in React.
