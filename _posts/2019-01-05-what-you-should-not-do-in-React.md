@@ -14,7 +14,7 @@ You can access one of my personal project using React [at this location](https:/
 
 ### Arrow function in the render function
 
-The first thing you should avoid is to inline arrow function in React's render function. The ESLint rule is *react/jsx-no-bind*. Here is an example:
+The first thing you should avoid is to inline an arrow function in React's render function. The ESLint rule is *react/jsx-no-bind*. Here is an example:
 
 {% highlight jsx %}
 class Button extends React.Component {
@@ -28,13 +28,13 @@ class Button extends React.Component {
 }
 {% endhighlight %}
 
-What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it'll hurt application performance in two ways. First, it'll create an unnecessary anonymous function at each rendering of the parent component.
+What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it'll hurt the application performance in two ways. First, it'll create an unnecessary anonymous function at each rendering of the parent component.
 
-Then, it creates a new anonymous function, React will also trigger a re-render of child component. It'll break *React.PureComponent* or defined *shouldComponentUpdate* optimization.
+Then, it creates a new anonymous function, React will also trigger a re-render of the child component. It'll break *React.PureComponent* or *shouldComponentUpdate* optimization.
 
 #### Solution
 
-It's very easy to solve, you shouldn't declare your arrow function inside of render. You should move the arrow function as a class field. Then, child component props should refer to this class field. Here is a solution:
+It's very easy to solve, you shouldn't declare your arrow function inside of the render. You should move the arrow function as a class field. Then, child component props should refer to this class field. Here is a solution:
 
 {% highlight jsx %}
 class Button extends React.Component {
@@ -78,7 +78,7 @@ this.state = {
 };
 {% endhighlight %}
 
-The issue with nested state happens when you try to update *coord* object:
+The issue with nested state happens when you try to update the *coord* object:
 
 {% highlight jsx %}
 coord.x = 10;
@@ -88,7 +88,7 @@ this.setState({
 });
 {% endhighlight %}
 
-You are expecting the component being rendered again. Unfortunately, it is not the case for *PureComponent*. React makes a shallow compare on component state and it will no see there is a change in the state.
+You are expecting the component being rendered again. Unfortunately, it is not the case for *PureComponent*. React makes a shallow compare on component state and it won't see there is a change in the state.
 
 Another thing you need to be careful when you use nested state is that stateState performs a shallow merge.
 
@@ -134,9 +134,9 @@ otherfunction() {
 
 Here are the solutions you can follow based on your context:
 
-1. Just change your design and avoid using nested state
+1. Just change your design and avoid using a nested state
 2. Use destructuring, it will un-nested your object into the state
-3. You can also create a new object yourself when you make a change. But, what I suggest is to use *immutable* library. Facebook provides *Immutable.js*, it will do the job.
+3. You can also create a new object yourself when you make a change. But, what I suggest is to use an *immutable* library. Facebook provides *Immutable.js*, it will do the job.
 
 Each solution has his own advantages and disadvantage. You should choose a solution based on your context.
 
@@ -210,11 +210,11 @@ render() {
 
 #### Warning
 
-![Use carefully display none in React]({{ site.baseurl }}assets/images/posts/error.png){: .alignleft}Do not abuse the *display* rule in your React application. With *display: none*, React will still render the element and add to the DOM. Please use the two solutions to toggle a component based on your context.
+![Use carefully display none in React]({{ site.baseurl }}assets/images/posts/error.png){: .alignleft} Do not abuse the *display* rule in your React application. With *display: none*, React will still render the element and add to the DOM. Please use the two solutions to toggle a component based on your context.
 
 ### target="_blank" security
 
-It's not only related to React application. But, I learn it when I was working in a React project. Thanks to ESLint, it raises *react/jsx-no-bind* warning and I discover there is a security issue with this simple code:
+It's not only related to a React application. But, I learn it when I was working in a React project. Thanks to ESLint, it raises *react/jsx-no-bind* warning and I discover there is a security issue with this simple code:
 
 {% highlight jsx %}
 <a href="http://malicious-website.com" target="_blank">Click here!</a>
