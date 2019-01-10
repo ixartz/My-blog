@@ -97,7 +97,9 @@ Each solution has his own advantages and disadvantage. You should choose a solut
 
 ### Show/Hide component with conditional rendering
 
-As you may know, React allows you to render a component based on conditions. I thought I could benefit this conditional rendering to show/hide components. Actually, you should use conditional rendering for toggling small components. But, for complex ones, you should avoid. Indeed, even if it works well but behind the scene, the component was unnecessarily re-created each time we show/hide the element.
+As you may know, React allows you to render a component based on conditions. I thought I could benefit this conditional rendering to show/hide components. Actually, you should use conditional rendering for toggling small components.
+
+But, for complex ones, you should avoid. Especially, when you have a complex *constructor* or a complex mounting process. Even if it works well but behind the scene, the component was unnecessarily re-created each time we show/hide the element.
 
 {% highlight jsx %}
 class Button extends React.Component {
@@ -129,13 +131,13 @@ class Button extends React.Component {
 }
 {% endhighlight %}
 
-The above code will toggle *ComplexComponent* component each time when you click on the button. It works very well to hide/show the *ComplexComponent* component for each click. But, there is a major drawback: each time we display back the *ComplexComponent* component, it will instantiate a new instance and it will re-create a new one from scratch.
+The above code will toggle *ComplexComponent* component each time when you click on the button. It works very well to hide/show the *ComplexComponent* component for each click. But, there is a major drawback: each time we display back the *ComplexComponent* component, it'll instantiate a new instance and it will re-create a new one from scratch.
 
-You should avoid using conditional rendering. Especially, when the *ComplexComponent* component has a resource-consuming constructor and/or mounting process.
+You should avoid using conditional rendering. Especially, when the *ComplexComponent* component has a resource-consuming constructor and/or mounting process. Indeed, the *constructor* and *componentDidMount* method will be called each time we show the component.
 
 #### Solution
 
-The best way in React to show or hide a component is to use CSS. A simple *display* CSS property can be used to show/hide a component without re-creating it.
+The other way in React to show or hide a component is to use CSS. A simple *display* CSS property can be used to show/hide a component without re-creating it.
 
 Below, you can find an example where *display* CSS property can be applied:
 
@@ -160,6 +162,10 @@ render() {
   );
 }
 {% endhighlight %}
+
+#### Warning
+
+![Use carefully display none in React]({{ site.baseurl }}assets/images/posts/error.png){: .alignleft}Do not abuse the *display* rule in your React application. With *display: none*, React will still render the element and add to the DOM. Please use the two solutions to toggle a component based on your context.
 
 ### target="_blank" security
 
