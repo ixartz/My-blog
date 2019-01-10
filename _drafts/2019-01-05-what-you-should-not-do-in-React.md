@@ -54,7 +54,12 @@ class Button extends React.Component {
 
 #### Going deeper
 
-Before changing all your inline function, you should also read these two articles: [React, Inline Functions, and Performance](https://cdb.reacttraining.com/react-inline-functions-and-performance-bdff784f5578) and [Is It Necessary to Apply ESLint jsx-no-bind Rule?](http://shzhangji.com/blog/2018/09/13/is-it-necessary-to-apply-eslint-jsx-no-bind-rule/). They consider *react/jsx-no-bind* is a premature optimization.
+Before changing all your inline function, you should also read these two articles:
+
+* [React, Inline Functions, and Performance](https://cdb.reacttraining.com/react-inline-functions-and-performance-bdff784f5578)
+* [Is It Necessary to Apply ESLint jsx-no-bind Rule?](http://shzhangji.com/blog/2018/09/13/is-it-necessary-to-apply-eslint-jsx-no-bind-rule/)
+
+They consider *react/jsx-no-bind* is a premature optimization. I'll let you make your own thought about this topic.
 
 ### Nested state
 
@@ -83,7 +88,47 @@ this.setState({
 });
 {% endhighlight %}
 
-You are expecting the component being rendered again. Unfortunately, it is not the case. React makes a shallow compare on component state and it will no see there is a change in the state.
+You are expecting the component being rendered again. Unfortunately, it is not the case for *PureComponent*. React makes a shallow compare on component state and it will no see there is a change in the state.
+
+Another thing you need to be careful when you use nested state is that stateState performs a shallow merge.
+
+{% highlight jsx %}
+constructor() {
+  this.state = {
+    x: 10,
+    y: 10
+  };
+}
+
+otherfunction() {
+  this.setState({
+    y: 100
+  });
+}
+{% endhighlight %}
+
+You are expecting **this.state.x = 10** and **this.state.y = 100**. But, when you have a nested state like:
+
+{% highlight jsx %}
+constructor() {
+  this.state = {
+    coord: {
+      x: 10,
+      y: 10
+    }
+  };
+}
+
+otherfunction() {
+  this.setState({
+    coord: {
+      y: 100
+    }
+  });
+}
+{% endhighlight %}
+
+**this.state.coord.x** will become *undefined*.
 
 #### Solution
 
