@@ -4,7 +4,7 @@ description: Sharing Engineering Stuff
 aboutPage: true
 
 paginate: 5
-url: blog.ixartz.com
+url: https://blog.ixartz.com
 baseurl: /
 
 logo: assets/images/avatar.png
