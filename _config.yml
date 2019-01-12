@@ -35,6 +35,11 @@ defaults:
             type: drafts
         values:
             layout: post
+    -
+        scope:
+            path: "*.html"
+        values:
+            sitemap: false
 
 exclude: [Gemfile, Gemfile.lock, package.json, Rakefile, vendor]
 
@@ -47,3 +52,5 @@ plugins:
   - jekyll/minibundle
   - jekyll-minifier
   - jekyll-target-blank
+  - jekyll-sitemap
+  - jekyll-last-modified-at
