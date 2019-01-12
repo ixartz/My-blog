@@ -23,6 +23,10 @@ This project is based on Ruby environment and you need to install dependencies:
 
     $ bundle exec rake clobber
 
+## How to add a plugin
+
+    $ bundle add dependency
+
 ## Copyright & License for Jekyll themes
 
 Copyright (c) 2015 [Cactus Authors](https://github.com/koenbok/Cactus/blob/master/AUTHORS) -  Released under the MIT License.
