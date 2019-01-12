@@ -7,6 +7,8 @@ paginate: 5
 url: blog.ixartz.com
 baseurl: /
 
+logo: assets/images/avatar.png
+
 google_analytics: 'UA-88747769-1'
 disqus: true
 disqus_shortname: 'ixartz'
@@ -52,5 +54,6 @@ plugins:
   - jekyll/minibundle
   - jekyll-minifier
   - jekyll-target-blank
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-last-modified-at
