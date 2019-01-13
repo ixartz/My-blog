@@ -1,6 +1,7 @@
 ---
 title: '[Update Jan 14, 2016] My first post'
 date: 2013-01-19 11:03:38
+description: I was a former EPITA student, a French computer science school and I love trying new things. This blog is a perfect place for me to share about software engineering.
 shortdescription: If you want to know more about me
 categories:
   - My life

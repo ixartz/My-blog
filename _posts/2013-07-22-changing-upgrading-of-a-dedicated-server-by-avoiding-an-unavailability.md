@@ -1,6 +1,7 @@
 ---
 title: Changing / upgrading of a dedicated server by avoiding an unavailability
 date: 2013-07-22 14:54:40
+description: When you manage your own bare metal server, you need to update it. This guide is perfect for you if you need to upgrade your server without any unavailability.
 categories:
   - High availability
 tags:

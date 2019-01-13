@@ -1,6 +1,7 @@
 ---
 title: Creating a multi-column glossary in HTML5/CSS3
 date: 2014-04-12 23:09:40
+description: How to create a glossary template for your webpage. A guided tutorial to set up a glossary with code and example.
 categories:
   - HTML5/CSS3
 tags:

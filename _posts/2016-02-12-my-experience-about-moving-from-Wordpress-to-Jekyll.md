@@ -1,6 +1,7 @@
 ---
 title: 'My experience about moving from Wordpress to Jekyll'
 date: 2016-02-12 17:41:56
+description: How to convert your Wordpress to a Jekyll blog. A guided tutorial to install Jekyll from a Wordpress.
 categories:
   - Jekyll
 tags:
