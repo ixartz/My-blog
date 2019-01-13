@@ -1,6 +1,7 @@
 ---
 title: '4 practices you should avoid in React'
 date: 2019-01-05
+description: List of React bad practices I learn. Inline function, nested state, conditional display and target blank security all you need to know about React component.
 shortdescription: Mistakes I have done in React
 categories:
   - React

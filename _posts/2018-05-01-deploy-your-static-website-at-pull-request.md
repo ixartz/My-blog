@@ -1,6 +1,7 @@
 ---
 title: 'Deploy your static website at every pull request'
 date: 2018-05-01 10:34:47
+description: A guided tutorial to install Netlify on your JAMStack architecture. At the end the article, you'll be able to use netlify as your GitHub CI and configure the netlify.toml file by yourself.
 shortdescription: See live a pull request change
 categories:
   - Jekyll
