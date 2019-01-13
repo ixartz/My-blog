@@ -1,7 +1,7 @@
 ---
 title: '4 practices you should avoid in React'
 date: 2019-01-05
-description: Mistakes I have done in React
+shortdescription: Mistakes I have done in React
 categories:
   - React
 tags:

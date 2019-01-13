@@ -1,7 +1,7 @@
 ---
 title: 'Deploy your static website at every pull request'
 date: 2018-05-01 10:34:47
-description: See live a pull request change
+shortdescription: See live a pull request change
 categories:
   - Jekyll
 tags:

@@ -1,7 +1,7 @@
 ---
 title: 'My long journey to find a job as a fresh graduate student in computer science (Part 1 of 3)'
 date: 2016-07-04 18:50:58
-description: The experience you can learn by doing a side project
+shortdescription: The experience you can learn by doing a side project
 categories:
   - My life
 tags:

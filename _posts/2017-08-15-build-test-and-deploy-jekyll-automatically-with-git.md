@@ -1,7 +1,7 @@
 ---
 title: 'Build, test and deploy Jekyll automatically with Git'
 date: 2017-08-15 14:34:56
-description: Jekyll continuous integration and deployment
+shortdescription: Jekyll continuous integration and deployment
 categories:
   - Jekyll
 tags:
