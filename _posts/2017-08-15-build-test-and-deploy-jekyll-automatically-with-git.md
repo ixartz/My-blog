@@ -1,6 +1,7 @@
 ---
 title: 'Build, test and deploy Jekyll automatically with Git'
 date: 2017-08-15 14:34:56
+description: A Step-by-Step tutorial to install Travis with Jekyll. You can write your article on Jekyll, store the source code on GitHub and deployed with Travis CI.
 shortdescription: Jekyll continuous integration and deployment
 categories:
   - Jekyll

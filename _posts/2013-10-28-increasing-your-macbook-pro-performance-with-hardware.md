@@ -1,6 +1,7 @@
 ---
 title: Increasing your MacBook Pro performance with hardware
 date: 2013-10-28 18:06:42
+description: After several years, your MacBook is not good as it used to. Here is the solution on how to update your Apple laptop without changing it.
 categories:
   - MacBook
 tags:

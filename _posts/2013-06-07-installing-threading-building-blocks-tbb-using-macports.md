@@ -1,6 +1,7 @@
 ---
 title: Installing Threading Building Blocks (TBB) using MacPorts
 date: 2013-06-07 23:46:51
+description: How to install TBB on Mac with MacPorts. Follow this guide for instructions on setting up Threading Building Blocks.
 categories:
   - C++
 tags:

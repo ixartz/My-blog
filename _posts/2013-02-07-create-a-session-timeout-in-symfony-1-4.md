@@ -1,6 +1,7 @@
 ---
 title: Create a session timeout in Symfony 1.4
 date: 2013-02-07 18:12:30
+description: How to set a Symfony session lifetime. The default Symfony session expiration time is not suited to your use change? In this article, I'll explain how you can increase it.
 categories:
   - Symfony
 tags:
