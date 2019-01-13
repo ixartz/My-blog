@@ -1,7 +1,7 @@
 ---
 title: 'My long journey to find a job as a fresh graduate student in computer science (Part 2 of 3)'
 date: 2016-08-26 14:27:58
-description: Preparation for interviews in tech companies
+shortdescription: Preparation for interviews in tech companies
 categories:
   - My life
 tags:

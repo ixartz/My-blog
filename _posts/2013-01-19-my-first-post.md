@@ -1,7 +1,7 @@
 ---
 title: '[Update Jan 14, 2016] My first post'
 date: 2013-01-19 11:03:38
-description: If you want to know more about me
+shortdescription: If you want to know more about me
 categories:
   - My life
 tags:
