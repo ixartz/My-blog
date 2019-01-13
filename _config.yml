@@ -1,5 +1,6 @@
 name: Ixartz's technical blog
-description: Sharing Engineering Stuff
+shortdescription: Sharing Engineering Stuff
+description: Sharing Engineering Stuff. A blog where I share my knowledge and tricks about programming and software engineering. I love testing new technologies and new tools.
 
 aboutPage: true
 
@@ -43,7 +44,7 @@ defaults:
         values:
             sitemap: false
 
-exclude: [Gemfile, Gemfile.lock, package.json, Rakefile, vendor]
+exclude: [Gemfile, Gemfile.lock, package.json, Rakefile, netlify.toml, vendor]
 
 jekyll-minifier:
   compress_css: false
