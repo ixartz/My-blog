@@ -1,6 +1,7 @@
 source 'https://rubygems.org/'
 
 gem 'jekyll'
+gem 'jekyll-compress-images'
 gem 'jekyll-paginate'
 gem 'jekyll-minibundle'
 gem 'jekyll-minifier'

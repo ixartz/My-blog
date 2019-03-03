@@ -49,10 +49,14 @@ jekyll-minifier:
   compress_css: false
   compress_javascript: false
 
+compress_images:
+  images_path: 'assets/images/**/*.{gif,png,jpg,jpeg,svg}'
+
 plugins:
   - jekyll-paginate
   - jekyll/minibundle
   - jekyll-minifier
+  - jekyll-compress-images
   - jekyll-target-blank
   - jekyll-seo-tag
   - jekyll-sitemap
