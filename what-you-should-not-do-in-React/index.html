@@ -1,0 +1,118 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>4 practices you should avoid in React | Ixartz’s technical blog</title> <meta name="generator" content="Jekyll v3.8.6"/> <meta property="og:title" content="4 practices you should avoid in React"/> <meta name="author" content="Ixartz"/> <meta property="og:locale" content="en_US"/> <meta name="description" content="List of React bad practices I learn. Inline function, nested state, conditional display and target blank security all you need to know about React component."/> <meta property="og:description" content="List of React bad practices I learn. Inline function, nested state, conditional display and target blank security all you need to know about React component."/> <link rel="canonical" href="https://blog.ixartz.com/what-you-should-not-do-in-React/"/> <meta property="og:url" content="https://blog.ixartz.com/what-you-should-not-do-in-React/"/> <meta property="og:site_name" content="Ixartz’s technical blog"/> <meta property="og:type" content="article"/> <meta property="article:published_time" content="2019-01-05T00:00:00+00:00"/> <script type="application/ld+json">
+{"description":"List of React bad practices I learn. Inline function, nested state, conditional display and target blank security all you need to know about React component.","author":{"@type":"Person","name":"Ixartz"},"@type":"BlogPosting","url":"https://blog.ixartz.com/what-you-should-not-do-in-React/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://blog.ixartz.com/assets/images/avatar.png"},"name":"Ixartz"},"headline":"4 practices you should avoid in React","dateModified":"2019-01-13T14:38:19+00:00","datePublished":"2019-01-05T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.ixartz.com/what-you-should-not-do-in-React/"},"@context":"http://schema.org"}</script> <link rel="shortcut icon" href="/favicon.ico"> <link rel="stylesheet" href="/assets/css/style-fd671926271de12eaa76fa3cc6209199.css"> </head> <body> <nav class="main-nav"> <a href="/"> <span class="arrow">←</span>Home</a> <a href="/about/">About</a> <a class="cta" href="http://twitter.com/ixartz" target="_blank" rel="noopener noreferrer">Subscribe</a> </nav> <section class=" wrapper"> <article class="post"> <header> <h1>4 practices you should avoid in React</h1> <h2 class="headline">January 5, 2019</h2> </header> <section id="post-body"> <p>Lately, I’ve used intensively React in my work but also in my personal project. Here, I’ll share the mistakes I’ve done in my React code. And, what you should also avoid doing in your project.</p> <p>You can access one of my personal project using React <a href="https://github.com/ixartz/handwritten-digit-recognition-tensorflowjs" target="_blank" rel="noopener noreferrer">at this location</a>. The 4 mistakes I list here was done in this project where I implement a digit recognizer. This project helps me learn Redux, Tensorflow.js, styled-components, Ant Design, etc. I’m very happy to share what I learn in this small deep learning project with React.</p> <h3 id="arrow-function-in-the-render-function">Arrow function in the render function</h3> <p>The first thing you should avoid is to inline an arrow function in React’s render function. The ESLint rule is <em>react/jsx-no-bind</em>. Here is an example:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span><span class="si">}</span><span class="p">&gt;</span>
+        Click me!
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure> <p>What is wrong with the previous code? Well, the function is re-created at each rendering of the parent component. As you can guess, it’ll hurt the application performance in two ways. First, it’ll create an unnecessary anonymous function at each rendering of the parent component.</p> <p>Then, it creates a new anonymous function, React will also trigger a re-render of the child component. It’ll break <em>React.PureComponent</em> or <em>shouldComponentUpdate</em> optimization.</p> <h4 id="solution">Solution</h4> <p>It’s very easy to solve, you shouldn’t declare your arrow function inside of the render. You should move the arrow function as a class field. Then, child component props should refer to this class field. Here is a solution:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span>
+        Click me!
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure> <h4 id="going-deeper">Going deeper</h4> <p>Before changing all your inline function, you should also read these two articles:</p> <ul> <li><a href="https://cdb.reacttraining.com/react-inline-functions-and-performance-bdff784f5578" target="_blank" rel="noopener noreferrer">React, Inline Functions, and Performance</a></li> <li><a href="http://shzhangji.com/blog/2018/09/13/is-it-necessary-to-apply-eslint-jsx-no-bind-rule/" target="_blank" rel="noopener noreferrer">Is It Necessary to Apply ESLint jsx-no-bind Rule?</a></li> </ul> <p>They consider <em>react/jsx-no-bind</em> is a premature optimization. I’ll let you make your own thought about this topic.</p> <h3 id="nested-state">Nested state</h3> <p>I made a mistake to try working with the nested state in React. A nested state is putting an object into React’s state. For example, this following code is a nested state:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="kd">let</span> <span class="nx">coord</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="na">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="na">width</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="na">height</span><span class="p">:</span> <span class="mi">200</span>
+<span class="p">};</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">coord</span>
+<span class="p">};</span></code></pre></figure> <p>The issue with nested state happens when you try to update the <em>coord</em> object:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="nx">coord</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+  <span class="nx">coord</span>
+<span class="p">});</span></code></pre></figure> <p>You are expecting the component being rendered again. Unfortunately, it is not the case for <em>PureComponent</em>. React makes a shallow compare on component state and it won’t see there is a change in the state.</p> <p>Another thing you need to be careful when you use nested state is that stateState performs a shallow merge.</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">x</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="na">y</span><span class="p">:</span> <span class="mi">10</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">otherfunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+    <span class="na">y</span><span class="p">:</span> <span class="mi">100</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></figure> <p>You are expecting <strong>this.state.x = 10</strong> and <strong>this.state.y = 100</strong>. But, when you have a nested state like:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">coord</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">x</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="na">y</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="nx">otherfunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+    <span class="na">coord</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">y</span><span class="p">:</span> <span class="mi">100</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></figure> <p><strong>this.state.coord.x</strong> will become <em>undefined</em>.</p> <h4 id="solution-1">Solution</h4> <p>Here are the solutions you can follow based on your context:</p> <ol> <li>Just change your design and avoid using a nested state</li> <li>Use destructuring, it will un-nested your object into the state</li> <li>You can also create a new object yourself when you make a change. But, what I suggest is to use an <em>immutable</em> library. Facebook provides <em>Immutable.js</em>, it will do the job.</li> </ol> <p>Each solution has his own advantages and disadvantage. You should choose a solution based on your context.</p> <h3 id="showhide-component-with-conditional-rendering">Show/Hide component with conditional rendering</h3> <p>As you may know, React allows you to render a component based on conditions. I thought I could benefit this conditional rendering to show/hide components. Actually, you should use conditional rendering for toggling small components.</p> <p>But, for complex ones, you should avoid. Especially, when you have a complex <em>constructor</em> or a complex mounting process. Even if it works well but behind the scene, the component was unnecessarily re-created each time we show/hide the element.</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="kd">class</span> <span class="nx">Button</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">show</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+      <span class="na">show</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">show</span>
+    <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span>
+          Click me!
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="cm">/* Here is the conditional rendering */</span><span class="si">}</span>
+        <span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">show</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nc">ComplexComponent</span> <span class="p">/&gt;</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure> <p>The above code will toggle <em>ComplexComponent</em> component each time when you click on the button. It works very well to hide/show the <em>ComplexComponent</em> component for each click. But, there is a major drawback: each time we display back the <em>ComplexComponent</em> component, it’ll instantiate a new instance and it will re-create a new one from scratch.</p> <p>You should avoid using conditional rendering. Especially, when the <em>ComplexComponent</em> component has a resource-consuming constructor and/or mounting process. Indeed, the <em>constructor</em> and <em>componentDidMount</em> method will be called each time we show the component.</p> <h4 id="solution-2">Solution</h4> <p>The other way in React to show or hide a component is to use CSS. A simple <em>display</em> CSS property can be used to show/hide a component without re-creating it.</p> <p>Below, you can find an example where <em>display</em> CSS property can be applied:</p> <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.hidden</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">classname</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">show</span> <span class="p">?</span> <span class="kc">null</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="si">}</span><span class="p">&gt;</span>
+        Click me!
+      <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="cm">/* Here is the conditional rendering */</span><span class="si">}</span>
+      <span class="p">&lt;</span><span class="nc">ComplexComponent</span> <span class="na">className=</span><span class="si">{</span><span class="nx">classname</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span></code></pre></figure> <h4 id="warning">Warning</h4> <p><img src="/assets/images/posts/error.png" alt="Use carefully display none in React" class="alignleft"> Do not abuse the <em>display</em> rule in your React application. With <em>display: none</em>, React will still render the element and add to the DOM. Please use the two solutions to toggle a component based on your context.</p> <h3 id="target_blank-security">target=”_blank” security</h3> <p>It’s not only related to a React application. But, I learn it when I was working in a React project. Thanks to ESLint, it raises <em>react/jsx-no-bind</em> warning and I discover there is a security issue with this simple code:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">http://malicious-website.com</span><span class="dl">"</span> <span class="nx">target</span><span class="o">=</span><span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">here</span><span class="o">!</span><span class="p">&lt;</span><span class="err">/</span><span class="nt">a</span><span class="p">&gt;</span></code></pre></figure> <p>I couldn’t imagine with this one line of code on your website, it can bring a vulnerability to your application.</p> <p>The attacker can put this following code on his malicious website:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="nb">window</span><span class="p">.</span><span class="nx">opener</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://fake-facebook.com</span><span class="dl">"</span><span class="p">;</span></code></pre></figure> <p>It can redirect the tab where your website was displayed to any website.</p> <h4 id="solution-3">Solution</h4> <p>In your link, you just need to add <em>rel=”noopener noreferrer”</em> and you should get the following code:</p> <figure class="highlight"><pre><code class="language-jsx" data-lang="jsx"><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">http://malicious-website.com</span><span class="dl">"</span> <span class="nx">target</span><span class="o">=</span><span class="dl">"</span><span class="s2">_blank</span><span class="dl">"</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">noopener noreferrer</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">here</span><span class="o">!</span><span class="p">&lt;</span><span class="err">/</span><span class="nt">a</span><span class="p">&gt;</span></code></pre></figure> <p>Now, you are safe with this security issue.</p> <h2 id="conclusion">Conclusion</h2> <p>Here was my 4 mistakes I’ve done when I was working in React. I’m continuing to learn but I hope you can avoid doing the same mistake as me. If you have also some other anti-pattern, do not hesitate to leave below a comment. If you enjoy this article, I’ll share more bad practices in React.</p> </section> </article> <footer id="post-meta" class="clearfix"> <a href="http://twitter.com/ixartz" target="_blank" rel="noopener noreferrer"> <img class="avatar" src="/assets/images/avatar.png" alt="@ixartz"> <div> <span class="dark">Ixartz</span> <span>Sharing Engineering Stuff</span> </div> </a> <section id="sharing"> <a class="twitter" href="https://twitter.com/intent/tweet?text=http://https://blog.ixartz.com/what-you-should-not-do-in-React/%20-%204%20practices%20you%20should%20avoid%20in%20React%20by%20@ixartz" target="_blank" rel="noopener noreferrer"><span class="icon-twitter"> Tweet</span></a> </section> </footer> <div class="archive readmore"> <h3>Comments</h3> <section class="disqus"> <div id="disqus_thread"></div> <script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//ixartz.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="noopener noreferrer" target="_blank">comments powered by Disqus.</a> </noscript> </section> </div> </section> <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-88747769-1', 'auto');
+      ga('send', 'pageview');
+    </script> </body> </html>
