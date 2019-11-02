@@ -1,14 +1,14 @@
 source 'https://rubygems.org/'
 
-gem 'jekyll'
-gem 'jekyll-compress-images'
-gem 'jekyll-paginate'
-gem 'jekyll-minibundle'
-gem 'jekyll-minifier'
-gem 'jekyll-target-blank'
-gem "jekyll-seo-tag"
-gem "jekyll-sitemap"
-gem "jekyll-last-modified-at"
-gem 'rake'
-gem 'rubocop'
-gem 'html-proofer'
+gem 'jekyll', '3.8.6'
+gem 'jekyll-compress-images', '1.2'
+gem 'jekyll-paginate', '1.1.0'
+gem 'jekyll-minibundle', '2.2.0'
+gem 'jekyll-minifier', '0.1.8'
+gem 'jekyll-target-blank', '1.2.0'
+gem "jekyll-seo-tag", '2.5.0'
+gem "jekyll-sitemap", '1.2.0'
+gem "jekyll-last-modified-at", '1.0.1'
+gem 'rake', '12.3.1'
+gem 'rubocop', '0.60.0'
+gem 'html-proofer', '3.13.0'
